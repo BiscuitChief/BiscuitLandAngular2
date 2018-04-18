@@ -7,6 +7,7 @@ using System.Web.Http;
 using BiscuitChief.Models;
 using System.Web.Security;
 using System.Web;
+using System.Xml;
 
 namespace BiscuitChief.Controllers
 {

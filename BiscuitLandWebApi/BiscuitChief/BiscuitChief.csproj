@@ -134,11 +134,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NavItemController.cs" />
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DataAccess\NavItem.cs" />
     <Compile Include="DataAccess\Recipe.cs" />
     <Compile Include="DataAccess\Login.cs" />
     <Compile Include="DataAccess\RecipeDirection.cs" />
@@ -148,6 +150,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactUs.cs" />
+    <Compile Include="Models\NavItem.cs" />
     <Compile Include="Models\RecipeDirection.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\RecipeImage.cs" />

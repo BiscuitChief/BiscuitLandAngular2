@@ -10,34 +10,34 @@
     <Text>Cooking</Text>
     <MenuItem>
       <Text>Recipe List</Text>
-      <Url>/Recipes/Search</Url>
+      <Url>/recipes/search</Url>
     </MenuItem>
   </MenuItem>
   <MenuItem>
     <Text>About</Text>
-    <Url>/About</Url>
+    <Url>/about</Url>
   </MenuItem>
   <MenuItem>
     <Text>Contact</Text>
-    <Url>/Home/Contact</Url>
+    <Url>/contact</Url>
   </MenuItem>
   <MenuItem>
     <Text>Administration</Text>
     <SecurityRole>FULLACCESS</SecurityRole>
     <MenuItem>
       <Text>Manage Users</Text>
-      <Url>/ManageUsers</Url>
+      <Url>/manageusers</Url>
       <SecurityRole>FULLACCESS</SecurityRole>
     </MenuItem>
     <MenuItem>
       <Text>Database Scripts</Text>
-      <Url>/DatabaseScripts</Url>
+      <Url>/databasescripts</Url>
       <SecurityRole>FULLACCESS</SecurityRole>
     </MenuItem>
   </MenuItem>
   <MenuItem Authenticated="0">
     <Text>Login</Text>
-    <Url>/Login</Url>
+    <Url>/login</Url>
   </MenuItem>
   <MenuItem Authenticated="1">
     <Text>Logout</Text>

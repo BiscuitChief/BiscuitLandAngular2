@@ -1,0 +1,97 @@
+.PageHeader {
+  clear: both;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background: -webkit-linear-gradient(top, #4800ff 0%,#723fff 50%,#dddddd 100%);
+  background: -o-linear-gradient(bottom, #4800ff 0%,#723fff 50%,#dddddd 100%);
+  background: -moz-linear-gradient(bottom, #4800ff 0%,#723fff 50%,#dddddd 100%);
+  background: linear-gradient(to bottom, #4800ff 0%,#723fff 50%,#dddddd 100%);
+  color: #ffffff;
+}
+
+.PageHeader .HeaderText {
+  font-weight: bold;
+  font-size: 17px;
+  padding: 10px;
+  display: inline-block;
+  width: 225px;
+}
+
+.PageHeader a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.PageHeader a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.TopNavigation {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  list-style: none;
+  font-weight: bold;
+}
+
+.TopNavigation li {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+}
+
+.TopNavigation li a, .TopNavigation li div {
+  display: inline-block;
+  padding: 13px 10px 12px 10px;
+}
+
+.TopNavigation li a {
+  cursor: pointer;
+}
+
+.TopNavigation li:hover {
+  background: -webkit-linear-gradient(top, #333333 0%,#888888 100%);
+  background: -o-linear-gradient(bottom, #333333 0%,#888888 100%);
+  background: -moz-linear-gradient(bottom, #333333 0%,#888888 100%);
+  background: linear-gradient(to bottom, #333333 0%,#888888 100%);
+}
+
+.TopNavigation .SubNavigation {
+  padding: 0;
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 150px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.TopNavigation .SubNavigation li {
+  background: -webkit-linear-gradient(top, #888888 0%,#AAAAAA 100%);
+  background: -o-linear-gradient(bottom, #888888 0%,#AAAAAA 100%);
+  background: -moz-linear-gradient(bottom, #888888 0%,#AAAAAA 100%);
+  background: linear-gradient(to bottom, #888888 0%,#AAAAAA 100%);
+  display: block;
+  width: 150px;
+  font-size: 14px;
+}
+
+.TopNavigation .SubNavigation li a, .TopNavigation .SubNavigation li div {
+  padding: 5px 10px 5px 10px;
+  font-size: 14px;
+}
+
+.TopNavigation .SubNavigation li:hover {
+  background: -webkit-linear-gradient(top, #333333 0%,#888888 100%);
+  background: -o-linear-gradient(bottom, #333333 0%,#888888 100%);
+  background: -moz-linear-gradient(bottom, #333333 0%,#888888 100%);
+  background: linear-gradient(to bottom, #333333 0%,#888888 100%);
+}
+
+.TopNavigation li:hover .SubNavigation {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}

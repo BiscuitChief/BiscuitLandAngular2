@@ -1,0 +1,23 @@
+<div class="PageHeader">
+  <div class="HeaderText">
+    <a href="/">Welcome to my .NET site</a>
+  </div>
+  <ul class="TopNavigation" *ngIf="navItemList">
+    <li *ngFor="let navItem of navItemList">
+      <a *ngIf="navItem.Url && navItem.Target" routerLink="{{ navItem.Url }}" target="{{ navItem.Target }}">{{ navItem.Text }}</a>
+      <a *ngIf="navItem.Url && !navItem.Target" routerLink="{{ navItem.Url }}">{{ navItem.Text }}</a>
+      <div *ngIf="!navItem.Url">{{ navItem.Text }}</div>
+      <ul *ngIf="navItem.SubItems" class="SubNavigation">
+        <li *ngFor="let navSubItem of navItem.SubItems">
+          <a *ngIf="navSubItem.Url && navSubItem.Target" routerLink="{{ navSubItem.Url }}" target="{{ navSubItem.Target }}">{{ navSubItem.Text }}</a>
+          <a *ngIf="navSubItem.Url && !navSubItem.Target" routerLink="{{ navSubItem.Url }}">{{ navSubItem.Text }}</a>
+          <div *ngIf="!navSubItem.Url">{{ navSubItem.Text }}</div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
+  </div>
+</div>
