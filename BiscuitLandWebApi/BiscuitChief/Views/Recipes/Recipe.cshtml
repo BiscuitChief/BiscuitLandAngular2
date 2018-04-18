@@ -1,0 +1,139 @@
+﻿@model BiscuitChief.Models.Recipe
+
+@{
+    ViewBag.Title = "Recipe Details";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="RecipeHeading">
+        <div class="Title">
+            @Model.Title
+            @if (HttpContext.Current.User.IsInRole("FULLACCESS"))
+            {
+                <span style="font-weight:normal; font-size:12px; padding-left:20px;">
+                    @Html.ActionLink("< Edit >", "Create", new { recipeid = Model.RecipeID })
+                </span>
+            }
+        </div>
+        @if (Model.CategoryList.Count > 0)
+        {
+            <div class="CategoryList">
+                @foreach (BiscuitChief.Models.Recipe.Category cat in Model.CategoryList)
+                {
+                    @cat.CategoryName
+                }
+            </div>
+        }
+        @if (!String.IsNullOrEmpty(Model.Description))
+        {
+            <div class="Description">
+                @Model.Description
+            </div>
+        }
+        
+        @if (Model.ImageList.Count > 0)
+        {
+            <div style="clear:both;"></div>
+            for (int i = 0; i < Model.ImageList.Count; i++)
+            {
+                @Html.HiddenFor(model => model.ImageList[i].ImageName)
+                <div class="ImageThumbnail">
+                    <img src='@Path.Combine(BiscuitChief.Models.RecipeImage.Path_Thumbnail, Model.ImageList[i].ImageName)' onclick="ShowImage(@i);" />
+                </div>
+            }
+            <div style="clear:both;"></div>
+        }
+    </div>
+    <b>Quantity:</b>
+    @Html.DropDownListFor(model => model.Quantity, (IEnumerable<SelectListItem>)ViewBag.QuantityValues)
+    <br/><br/>
+    <b>Ingredients:</b>
+    <ul class="IngredientsList">
+        @foreach (BiscuitChief.Models.RecipeIngredient item in Model.IngredientList)
+        {
+            if (item.DisplayType == BiscuitChief.Models.Recipe.DisplayTypeCodes.HDR)
+            {
+                <li class="Header">
+                    @item.IngredientName
+                </li>
+            }
+            else
+            {
+                <li class="Ingredient">
+                    @item.DisplayQuantity @item.UnitOfMeasure
+                    @item.IngredientName
+                    @((!String.IsNullOrEmpty(item.Notes)) ? " : " : "")
+                    @item.Notes
+                </li>
+            }
+        }
+    </ul>
+
+    <br/>
+    <b>Directions:</b>
+    <ul class="DirectionsList">
+        @foreach (BiscuitChief.Models.RecipeDirection item in Model.DirectionList)
+        {
+            if (item.DisplayType == BiscuitChief.Models.Recipe.DisplayTypeCodes.HDR)
+            {
+                <li class="Header">
+                    @item.DirectionText
+                </li>
+            }
+            else
+            {
+                <li class="Direction">
+                    @item.DirectionText
+                </li>
+            }
+        }
+    </ul>
+
+    @Html.HiddenFor(model => model.RecipeID);
+
+    <div id="ImageModal" class="modal fade" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content ImageStandard">
+                    <img id="ImageView" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script language="javascript" type="text/javascript">
+        
+        $(document).ready()
+        {
+            $("#Quantity").change(function () {
+                var id = $("#RecipeID").val();
+                var qty = $("#Quantity").val();
+
+                window.open('@Url.Action("Recipe", "Recipes")?recipeid=' + id + "&quantity=" + qty, "_self");
+            });
+        }
+
+        function ShowImage(index) {
+            SetImage(index);
+            $("#ImageModal").modal();
+        }
+
+        function SetImage(index){
+            if (!$("#ImageList_" + index + "__ImageName").length) {
+                index = 0;
+            }
+            var imagename = $("#ImageList_" + index + "__ImageName").val();
+            $("#ImageView").attr({
+                src: "/Content/Images/Recipes/Standard/" + imagename,
+                alt: "Recipe Image",
+                onclick: "SetImage(" + (index + 1) + ");"
+            });
+        }
+
+    </script>
+
+}

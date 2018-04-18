@@ -1,0 +1,374 @@
+﻿@model BiscuitChief.Models.Recipe
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(item => Model.RecipeID)
+
+    <div class="RecipeHeading">
+        <div class="Title">
+            @ViewBag.Title
+            @if (!String.IsNullOrEmpty(Model.RecipeID))
+            {
+                <div style="float:right; font-weight:normal; font-size:12px;">
+                    <a href='@Url.Action("Delete", "Recipes", new { recipeid = Model.RecipeID })'>&lt; Delete Recipe &gt;</a>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="InputForm">
+        <div class="SectionHeading">
+            Recipe Details
+        </div>
+        <ul class="FormFields">
+            <li>
+                @Html.LabelFor(model => model.Title)
+                @Html.TextBoxFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.Description)
+                @Html.TextAreaFor(model => model.Description, new { @rows = 3, @cols = "", style="width: 600px; max-width: 100%;" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </li>
+            <li>
+                <label>Cateogories:</label>
+                @for (int i = 0; i < Model.CategoryList.Count; i++)
+                {
+                    <span style="padding-right:15px; white-space:nowrap;">
+                        @Html.HiddenFor(item => Model.CategoryList[i].CategoryCode)
+                        @Html.HiddenFor(item => Model.CategoryList[i].CategoryName)
+                        @Model.CategoryList[i].CategoryName
+                        @Html.CheckBoxFor(item => Model.CategoryList[i].IsSelected)
+                    </span>
+                }
+            </li>
+            <li id ="ImagesForm">
+                @Html.Partial("PartialViews/CreateImageList", Model)
+            </li>
+        </ul>
+
+        <div class="SectionHeading" style="clear:both;">
+            Ingredients
+        </div>
+        <div id="IngredientsForm" style="clear:both;">
+            @Html.Partial("PartialViews/CreateIngredientList", Model)
+        </div>
+
+        <div class="SectionHeading" style="clear:both;">
+            Directions
+        </div>
+        <div id="DirectionsForm" style="clear:both;">
+            @Html.Partial("PartialViews/CreateDirectionList", Model)
+        </div>
+
+        <hr/>
+        <div style="text-align:center;">
+            <input id="btnSave" class="BtnSubmit" type="button" value="Save" style="width: 60px;" />
+            <input id="btnCancel" class="BtnSubmit" type="button" value="Cancel" style="margin-left:40px; width:60px;" />
+        </div>
+</div>
+
+<div id="ImageModal" class="modal fade" role="dialog">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content ImageStandard">
+                <img id="ImageView" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+    $(document).ready()
+    {
+        SetupIngredients();
+        SetupDirections();
+        SetupImages();
+
+        $("#btnSave").click(SaveRecipe);
+        $("#btnCancel").click(CancelRecipe);
+    }
+
+    function SaveRecipe() {
+        if ($("form").valid()) {
+            $("form").submit();
+        }
+    }
+
+    function CancelRecipe() {
+        if ($("#RecipeID").val() != "") {
+            window.location = '@Url.Action("Recipe", "Recipes")?recipeid=' + $("#RecipeID").val();
+        } else {
+            window.location = '@Url.Action("Search", "Recipes")';
+        }
+    }
+
+    function Ingredient_AddNew() {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Ingredient_Add",
+            data: $("form").serialize(),
+            success: Ingredient_Render
+        });
+    }
+
+    function Ingredient_MovePrevious(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Ingredient_MovePrevious",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Ingredient_Render
+        });
+    }
+
+    function Ingredient_MoveNext(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Ingredient_MoveNext",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Ingredient_Render
+        });
+    }
+
+    function Ingredient_Delete(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Ingredient_Delete",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Ingredient_Render
+        });
+    }
+
+    function Ingredient_Render(data) {
+        //Render partial view
+        $("#IngredientsForm").html(data);
+        SetupIngredients();
+        ResetValidation();
+    }
+
+
+    function Direction_AddNew() {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Direction_Add",
+            data: $("form").serialize(),
+            success: Direction_Render
+        });
+    }
+
+    function Direction_MovePrevious(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Direction_MovePrevious",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Direction_Render
+        });
+    }
+
+    function Direction_MoveNext(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Direction_MoveNext",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Direction_Render
+        });
+    }
+
+    function Direction_Delete(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Direction_Delete",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Direction_Render
+        });
+    }
+
+    function Direction_Render(data) {
+        //Render partial view
+        $("#DirectionsForm").html(data);
+        SetupDirections();
+        ResetValidation();
+    }
+
+    function SetupIngredients()
+    {
+        $("[id^=IngredientList][id$=DisplayType]").children("option:contains(Direction)").remove(); //Remove Directions option from Ingredients
+        $("[id^=IngredientList][id$=Quantity][value=0]").val(""); //Set zero quantities to blank
+
+        $("[id^=IngredientList][id$=DisplayType]").each(function (index, ddl) {
+            var ingindex = ddl.getAttribute("ingindex");
+            if (ddl.options[ddl.selectedIndex].text == "Header") {
+                $("[id=Ingredients_QtyRow][ingindex=" + ingindex + "]").hide();
+                $("[id=Ingredients_NotesRow][ingindex=" + ingindex + "]").hide();
+            } else {
+                $("[id=Ingredients_QtyRow][ingindex=" + ingindex + "]").show();
+                $("[id=Ingredients_NotesRow][ingindex=" + ingindex + "]").show();
+            }
+        })
+    }
+
+    function SetupDirections() {
+        $("[id^=DirectionList][id$=DisplayType]").children("option:contains(Ingredient)").remove();
+    }
+
+    function IngDisplayTypeChanged(ddl) {
+        var ingindex = ddl.getAttribute("ingindex");
+        if (ddl.options[ddl.selectedIndex].text == "Header") {
+            $("[id=Ingredients_QtyRow][ingindex=" + ingindex + "]").hide();
+            $("[id=Ingredients_NotesRow][ingindex=" + ingindex + "]").hide();
+        } else {
+            $("[id=Ingredients_QtyRow][ingindex=" + ingindex + "]").show();
+            $("[id=Ingredients_NotesRow][ingindex=" + ingindex + "]").show();
+        }
+    }
+
+    function UploadImage(e) {
+        var files = e.target.files;
+        if (files.length > 0) {
+            if (window.FormData !== undefined) {
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append("file" + i, files[i]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '/Recipes/UploadImage',
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: Image_AddNew,
+                    error: function (xhr, status, p3, p4) {
+                        var err = "Error " + " " + status + " " + p3 + " " + p4;
+                        if (xhr.responseText && xhr.responseText[0] == "{")
+                            err = JSON.parse(xhr.responseText).Message;
+                        $("#UploadResult").html(err);
+                    }
+                });
+            } else {
+                alert("This browser doesn't support HTML5 file uploads!");
+            }
+        }
+    }
+
+    function Image_AddNew(data) {
+        if (data.Success) {
+            $.ajax({
+                method: "POST",
+                cache: false,
+                dataType: "HTML",
+                url: "/Recipes/Image_Add",
+                data: $("form").serialize() + "&_newimgname=" + data.ResultText,
+                success: Images_Render
+            });
+        } else {
+            $("#UploadResult").html("Error: " + data.ResultText);
+        }
+    }
+
+    function Image_MovePrevious(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Image_MovePrevious",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Images_Render
+        });
+    }
+
+    function Image_MoveNext(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Image_MoveNext",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Images_Render
+        });
+    }
+
+    function Image_Delete(index) {
+        $.ajax({
+            method: "POST",
+            cache: false,
+            dataType: "HTML",
+            url: "/Recipes/Image_Delete",
+            data: $("form").serialize() + "&_index=" + index,
+            success: Images_Render
+        });
+    }
+
+    function Images_Render(data) {
+        //Render partial view
+        $("#ImagesForm").html(data);
+        SetupImages();
+        ResetValidation();
+    }
+
+    function SetupImages() {
+        var imginput = $("#NewImage");
+        imginput.replaceWith(imginput.val('').clone(true));
+        $("#NewImage").on("change", UploadImage);
+    }
+
+    function ShowImage(index) {
+        SetImage(index);
+        $("#ImageModal").modal();
+    }
+
+    function SetImage(index){
+        if (!$("#ImageList_" + index + "__ImageName").length) {
+            index = 0;
+        }
+        var imagename = $("#ImageList_" + index + "__ImageName").val();
+        var istemp = $("#ImageList_" + index + "__IsTemp").val();
+        var imagepath = "";
+        if (istemp == "False"){
+            imagepath = "/Content/Images/Recipes/Standard/" + imagename
+        } else {
+            imagepath = "/Content/Images/Temp/Standard/" + imagename
+        }
+
+        $("#ImageView").attr({
+            src: imagepath,
+            alt: "Recipe Image",
+            onclick: "SetImage(" + (index + 1) + ");"
+        });
+    }
+
+    function ResetValidation() {
+        //No longer needed as ModelState.Clear() seems to do the trick, leaving this here anway incase I need it later
+        //    //Hide validation, we don't need to see it in this case
+        //    $("[class='input-validation-error']").removeClass("input-validation-error");
+        //    $("[class^='field-validation-error']").html("");
+        //    $("[class^='field-validation-error']").addClass("field-validation-valid");
+        //    $("[class^='field-validation-error']").removeClass("field-validation-error");
+        //    //Update unobtrusive validation to include dynamically added form elements
+        var form = $("form");
+        form.removeData('validator');
+        form.removeData('unobtrusiveValidation');
+        $.validator.unobtrusive.parse(form);
+    }
+</script>
+}
