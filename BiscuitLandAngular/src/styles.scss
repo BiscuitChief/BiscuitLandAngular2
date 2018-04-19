@@ -27,6 +27,15 @@ textarea {
   max-width: 280px;
 }
 
+input.ng-dirty.ng-invalid.ng-touched {
+  border-color: #FF0000;
+  color: #FF0000;
+}
+
+.ErrorMsg {
+  color: #FF0000;
+}
+
 .PageFooter {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -65,22 +74,12 @@ textarea {
   height: 1px;
 }
 
-.field-validation-error {
-  color: #FF0000;
-}
-
-.input-validation-error {
-  border-color: #FF0000;
-}
-
-
 .PageTitle {
   font-weight: bold;
   font-size: 16px;
   border-bottom: 1px solid #CCCCCC;
   margin-bottom: 10px;
 }
-
 
 .InputRow {
   list-style-type: none;

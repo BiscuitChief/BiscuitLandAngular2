@@ -1,3 +1,33 @@
-<p>
-  login works!
-</p>
+<div>
+  You can use the form below to log in.  I have setup some demo logins so you can see the entire site
+  <br /><br />
+  Username: <b>admin</b>, Password: <b>test</b><br />
+  The demo admin login will allow you to see the entire site.  It will not allow you to save data.
+  <br /><br />
+  Username: <b>test</b>, Password: <b>test</b><br />
+  The demo test login is an example of a login without admin security roles.
+</div>
+<div class="SectionHeading">
+  Login
+</div>
+<form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <div>Please enter your login information below.</div>
+    <br />
+    <div>
+      <b>User Name:</b> <input formControlName="userName" [(ngModel)]="loginInfo.userName" placeholder="User Name" required />
+      <span [hidden]="!(formErrors.userName)" class="ErrorMsg">
+        {{formErrors.userName}}
+      </span>
+    </div>
+    <br />
+    <div>
+      <b>Password:</b> <input formControlName="password" [(ngModel)]="loginInfo.password" placeholder="Password" type="password" required />
+      <span [hidden]="!(formErrors.password)" class="ErrorMsg">
+        {{formErrors.password}}
+      </span>
+    </div>
+    <br /><br />
+    <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid" />
+  </div>
+</form>

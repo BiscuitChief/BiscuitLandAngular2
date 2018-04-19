@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RestangularModule, Restangular } from 'ngx-restangular';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -33,6 +35,8 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     RestangularModule.forRoot(RestangularConfigFactory)
 ],
   providers: [
