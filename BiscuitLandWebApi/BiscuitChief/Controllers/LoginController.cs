@@ -18,8 +18,8 @@ namespace BiscuitChief.Controllers
         [HttpPost]
         public IHttpActionResult Login(Login login)
         {
-            try { PortalUtility.ValidateAntiForgeryToken(); }
-            catch { return new PortalUtility.PlainTextResult("Invalid Request Token", HttpStatusCode.BadRequest); }
+            //try { PortalUtility.ValidateAntiForgeryToken(); }
+            //catch { return new PortalUtility.PlainTextResult("Invalid Request Token", HttpStatusCode.BadRequest); }
             
             bool isvalidlogin = Models.Login.ValidateLogin(login.UserName, login.Password);
 

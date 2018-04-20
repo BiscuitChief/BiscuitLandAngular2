@@ -12,10 +12,9 @@ import { NavItem } from '../shared/navitem.type';
 export class NavMenuComponent implements OnInit {
 
   navItemList: NavItem[];
-  errMess: string;
+  errMsg: string;
 
-  constructor(private navitemService: NavitemService,
-    @Inject('BaseURL') private BaseURL) { }
+  constructor(private navitemService: NavitemService) { }
 
   ngOnInit() {
     this.LoadTopNavMenu();
@@ -24,7 +23,7 @@ export class NavMenuComponent implements OnInit {
   LoadTopNavMenu() {
     this.navitemService.getNavItems()
       .subscribe(navlist => this.navItemList = navlist,
-      errmess => this.errMess = <any>errmess);
+      errMsg => this.errMsg = <any>errMsg);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { LoginService } from '../services/login.service';
+
 import { LoginCredential } from '../shared/login-credential.type';
 
 @Component({
@@ -12,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginInfo: LoginCredential;
   loginForm: FormGroup;
+  errMsg: string;
 
   formErrors = {
     'userName': '',
@@ -29,7 +32,8 @@ export class LoginComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private loginService: LoginService) {
     this.createForm();
   }
 
@@ -66,7 +70,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errMsg = null;
     this.loginInfo = this.loginForm.value;
-  }
 
+    this.loginService.login(this.loginInfo)
+      .subscribe(msg => this.errMsg = msg,
+      errMsg => this.errMsg = <any>errMsg);
+
+    this.loginForm.reset();
+  }
 }

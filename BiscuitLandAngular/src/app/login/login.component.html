@@ -15,19 +15,22 @@
     <div>Please enter your login information below.</div>
     <br />
     <div>
-      <b>User Name:</b> <input formControlName="userName" [(ngModel)]="loginInfo.userName" placeholder="User Name" required />
+      <b>User Name:</b> <input formControlName="userName" placeholder="User Name" />
       <span [hidden]="!(formErrors.userName)" class="ErrorMsg">
         {{formErrors.userName}}
       </span>
     </div>
     <br />
     <div>
-      <b>Password:</b> <input formControlName="password" [(ngModel)]="loginInfo.password" placeholder="Password" type="password" required />
+      <b>Password:</b> <input formControlName="password" placeholder="Password" type="password" />
       <span [hidden]="!(formErrors.password)" class="ErrorMsg">
         {{formErrors.password}}
       </span>
     </div>
-    <br /><br />
+    <br />
     <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid" />
+    <div *ngIf="errMsg" class="ErrorMsg">
+      {{errMsg}}
+    </div>
   </div>
 </form>

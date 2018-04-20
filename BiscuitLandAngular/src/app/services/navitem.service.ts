@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/delay';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { RestangularModule, Restangular } from 'ngx-restangular';
+import { environment } from '../../environments/environment';
 
+import { ServiceHelper } from '../shared/servicehelper';
 import { NavItem } from '../shared/navitem.type';
-import { ProcessHTTPMsgService } from './process-httpmsg.service';
+
+const API_URL = environment.apiUrl;
 
 @Injectable()
 export class NavitemService {
 
-  constructor(private restangular: Restangular,
-    private processHTTPMsg: ProcessHTTPMsgService) { }
+  constructor(private http: HttpClient) { }
 
   getNavItems(): Observable<NavItem[]> {
-    return this.restangular.all('api/gettopnavigation').getList();
+    return this.http
+      .get(API_URL + 'api/gettopnavigation')
+      .map(rsp => rsp as NavItem[])
+      .catch(ServiceHelper.handleError);
   }
-
 }

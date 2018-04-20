@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,13 +12,11 @@ import { NavMenuComponent } from './navmenu/navmenu.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
-import { RestangularConfigFactory } from './shared/restConfig';
-import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
-import { baseURL } from './shared/baseurl';
-import { NavitemService } from './services/navitem.service';
 import { LoginComponent } from './login/login.component';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
+
+import { NavitemService } from './services/navitem.service';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
@@ -34,15 +32,13 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    RestangularModule.forRoot(RestangularConfigFactory)
+    ReactiveFormsModule
 ],
   providers: [
     NavitemService,
-    { provide: 'BaseURL', useValue: baseURL },
-    ProcessHTTPMsgService
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
