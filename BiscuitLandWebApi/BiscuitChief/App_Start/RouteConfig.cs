@@ -12,12 +12,10 @@ namespace BiscuitChief
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.IgnoreRoute(""); //Allow index.html to load
+            routes.IgnoreRoute("partials/*");
+            routes.IgnoreRoute("assets/*");
+            routes.MapPageRoute("Default", "{*anything}", "~/index.html");
         }
     }
 }

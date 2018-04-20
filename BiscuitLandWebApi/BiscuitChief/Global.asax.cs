@@ -56,7 +56,7 @@ namespace BiscuitChief
 
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("");
+            //routes.IgnoreRoute("");
             //routes.MapRoute("DefaultRoute", "", new { controller = "Home", action = "Index" });
             //routes.MapRoute("AboutRoute", "About", new { controller = "Home", action = "About" });
             //routes.MapRoute("DatabaseScripts", "DatabaseScripts", new { controller = "AdminFunctions", action = "DatabaseScripts" });
