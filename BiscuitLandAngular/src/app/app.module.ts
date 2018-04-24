@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
+import { LogoutComponent } from './logout/logout.component';
 
 import { NavitemService } from './services/navitem.service';
 import { LoginService } from './services/login.service';
@@ -27,7 +28,8 @@ import { LoginService } from './services/login.service';
     AboutComponent,
     ContactComponent,
     LoginComponent,
-    RecipeSearchComponent
+    RecipeSearchComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

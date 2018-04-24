@@ -21,9 +21,8 @@ export class NavMenuComponent implements OnInit {
   }
 
   LoadTopNavMenu() {
-    this.navitemService.getNavItems()
+    this.navitemService.topNavigation
       .subscribe(navlist => this.navItemList = navlist,
       errMsg => this.errMsg = <any>errMsg);
   }
-
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
@@ -14,12 +15,22 @@ const API_URL = environment.apiUrl;
 @Injectable()
 export class NavitemService {
 
-  constructor(private http: HttpClient) { }
+  public topNavigation: BehaviorSubject<NavItem[]> = new BehaviorSubject<NavItem[]>([]);  //setup the top navigation this way because it'll be updated from multiple components
 
-  getNavItems(): Observable<NavItem[]> {
-    return this.http
-      .get(API_URL + 'api/gettopnavigation')
-      .map(rsp => rsp as NavItem[])
-      .catch(ServiceHelper.handleError);
+  constructor(private http: HttpClient) {
+    this.refreshTopNavigation();
   }
+
+  refreshTopNavigation() {
+    this.http
+      .get(API_URL + 'api/gettopnavigation')
+      .subscribe(res => this.topNavigation.next(res as NavItem[])); //still need to figure out how to properly throw errors here
+  }
+
+  //testNavItems(): Observable<NavItem[]> {
+  //  return this.http
+  //    .get(API_URL + 'api/gettopnavigation')
+  //    .map(rsp => this.topNavigation.next(rsp as NavItem[]))
+  //    .catch(ServiceHelper.handleError);
+  //}
 }

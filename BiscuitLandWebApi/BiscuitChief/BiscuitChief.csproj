@@ -173,7 +173,6 @@
     <Content Include="Content\CSS\bootstrap.css" />
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="DownloadFiles\DataRestoreScript.txt" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\CSS\Site.css" />
     <Content Include="DownloadFiles\BiscuitChiefDatabaseScripts.zip" />

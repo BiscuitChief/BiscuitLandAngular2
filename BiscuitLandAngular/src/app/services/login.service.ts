@@ -29,4 +29,11 @@ export class LoginService {
       .map(rsp => rsp as string)
       .catch(ServiceHelper.handleError);
   }
+
+  logout(): Observable<string> {
+    return this.http
+      .post(API_URL + 'api/logout', null, httpOptions)
+      .map(rsp => "")
+      .catch(ServiceHelper.handleError);
+  }
 }

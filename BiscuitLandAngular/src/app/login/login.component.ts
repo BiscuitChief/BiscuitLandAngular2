@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { LoginService } from '../services/login.service';
+import { NavitemService } from '../services/navitem.service';
 
 import { LoginCredential } from '../shared/login-credential.type';
 
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginInfo: LoginCredential;
   loginForm: FormGroup;
   errMsg: string;
+  return: string = '';
 
   formErrors = {
     'userName': '',
@@ -33,13 +36,17 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(private fb: FormBuilder,
-    private loginService: LoginService) {
+    private loginService: LoginService,
+    private navitemService: NavitemService,
+    private router: Router,
+    private route: ActivatedRoute) {
     this.createForm();
   }
 
   ngOnInit() {
     this.loginInfo = new LoginCredential();
-  }
+    this.route.queryParams
+      .subscribe(params => this.return = params['ReturnUrl'] || '/');}
 
   createForm() {
     this.loginForm = this.fb.group({
@@ -74,9 +81,16 @@ export class LoginComponent implements OnInit {
     this.loginInfo = this.loginForm.value;
 
     this.loginService.login(this.loginInfo)
-      .subscribe(msg => this.errMsg = msg,
+      .subscribe(msg => this.processLogin(msg),
       errMsg => this.errMsg = <any>errMsg);
 
     this.loginForm.reset();
+  }
+
+  processLogin(results: string) {
+    if (results == null) {
+      this.navitemService.refreshTopNavigation();
+      this.router.navigateByUrl(this.return);
+    }
   }
 }
