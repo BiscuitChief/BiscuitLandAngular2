@@ -14,6 +14,7 @@ using System.Data;
 using System.Web.Configuration;
 using System.Configuration;
 using System.Web.Http;
+using System.Security.Claims;
 
 namespace BiscuitChief
 {
@@ -120,6 +121,12 @@ namespace BiscuitChief
 
             // Attach the new principal object to the current HttpContext object
             Context.User = principal;
+
+            //For some reason User.IsInRole quit working, manually setting Claims with the security roles seems to fix it
+            foreach (string role in roles)
+            {
+                ((ClaimsIdentity)User.Identity).AddClaim(new Claim(ClaimTypes.Role, role));
+            }
         }
 
         #endregion
