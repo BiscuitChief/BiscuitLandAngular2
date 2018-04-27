@@ -14,12 +14,8 @@ namespace BiscuitChief.Models
     {
         #region Public Properties
 
-        [Display(Name="User Name")]
-        [Required(ErrorMessage="Please enter a User Name.")]
         public string UserName { get; set; }
 
-        [Display(Name = "Password")]
-        [Required(ErrorMessage = "Please enter a Password.")]
         public string Password { get; set; }
 
         #endregion

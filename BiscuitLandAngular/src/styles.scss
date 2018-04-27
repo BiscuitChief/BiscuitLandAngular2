@@ -29,9 +29,17 @@ input,
 select,
 textarea {
   max-width: 280px;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: normal;
 }
 
 input.ng-dirty.ng-invalid.ng-touched {
+  border-color: #FF0000;
+  color: #FF0000;
+}
+
+textarea.ng-dirty.ng-invalid.ng-touched {
   border-color: #FF0000;
   color: #FF0000;
 }
@@ -284,7 +292,9 @@ input.ng-dirty.ng-invalid.ng-touched {
 
 .InputForm .FormFields label {
   font-weight: bold;
+  display:inline-block;
   width: 120px;
+  vertical-align:top;
 }
 
 .InputForm .FormFields .Seperator {

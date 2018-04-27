@@ -5,12 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { environment } from '../../environments/environment';
 
 import { ServiceHelper } from '../shared/servicehelper';
 import { NavItem } from '../shared/navitem.type';
 
-const API_URL = environment.apiUrl;
 
 @Injectable()
 export class NavitemService {
@@ -23,7 +21,7 @@ export class NavitemService {
 
   refreshTopNavigation() {
     this.http
-      .get(API_URL + 'api/gettopnavigation')
+      .get(ServiceHelper.API_URL + 'api/gettopnavigation')
       .subscribe(res => this.topNavigation.next(res as NavItem[])); //still need to figure out how to properly throw errors here
   }
 

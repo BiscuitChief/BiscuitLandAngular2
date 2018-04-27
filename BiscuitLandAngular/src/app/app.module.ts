@@ -18,6 +18,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { NavitemService } from './services/navitem.service';
 import { LoginService } from './services/login.service';
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginService } from './services/login.service';
 ],
   providers: [
     NavitemService,
-    LoginService
+    LoginService,
+    ContactService
   ],
   bootstrap: [AppComponent]
 })

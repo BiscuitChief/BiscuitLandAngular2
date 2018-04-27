@@ -1,22 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import 'rxjs/add/observable/of';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
 
 import { ServiceHelper } from '../shared/servicehelper';
 import { LoginCredential } from '../shared/login-credential.type';
-
-const API_URL = environment.apiUrl;
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
 
 @Injectable()
 export class LoginService {
@@ -25,14 +15,14 @@ export class LoginService {
 
   login(logininfo: LoginCredential): Observable<string> {
     return this.http
-      .post(API_URL + 'api/login', logininfo, httpOptions)
+      .post(ServiceHelper.API_URL + 'api/login', logininfo, ServiceHelper.httpOptions)
       .map(rsp => rsp as string)
       .catch(ServiceHelper.handleError);
   }
 
   logout(): Observable<string> {
     return this.http
-      .post(API_URL + 'api/logout', null, httpOptions)
+      .post(ServiceHelper.API_URL + 'api/logout', null, ServiceHelper.httpOptions)
       .map(rsp => "")
       .catch(ServiceHelper.handleError);
   }

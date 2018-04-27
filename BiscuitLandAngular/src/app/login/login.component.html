@@ -11,26 +11,29 @@
   Login
 </div>
 <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <div>Please enter your login information below.</div>
-    <br />
-    <div>
-      <b>User Name:</b> <input formControlName="userName" placeholder="User Name" />
-      <span [hidden]="!(formErrors.userName)" class="ErrorMsg">
-        {{formErrors.userName}}
-      </span>
-    </div>
-    <br />
-    <div>
-      <b>Password:</b> <input formControlName="password" placeholder="Password" type="password" />
-      <span [hidden]="!(formErrors.password)" class="ErrorMsg">
-        {{formErrors.password}}
-      </span>
-    </div>
-    <br />
-    <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid" />
-    <div *ngIf="errMsg" class="ErrorMsg">
-      {{errMsg}}
-    </div>
+  <div class="InputForm">
+    <ul class="FormFields">
+      <li>
+        <label>User Name:</label>
+        <input formControlName="userName" placeholder="User Name" />
+        <span [hidden]="!(formErrors.userName)" class="ErrorMsg">
+          {{formErrors.userName}}
+        </span>
+      </li>
+      <li>
+        <label>Password:</label>
+        <input formControlName="password" placeholder="Password" type="password" />
+        <span [hidden]="!(formErrors.password)" class="ErrorMsg">
+          {{formErrors.password}}
+        </span>
+      </li>
+      <li>
+        <label></label>
+        <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid" />
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="errMsg" class="ErrorMsg">
+    {{errMsg}}
   </div>
 </form>

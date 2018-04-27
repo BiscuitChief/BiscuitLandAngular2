@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
       'maxlength': 'FirstName cannot be more than 25 characters long.'
     },
     'password': {
-      'required': 'Last Name is required.',
-      'maxlength': 'Last Name cannot be more than 25 characters long.'
+      'required': 'Password is required.',
+      'maxlength': 'Password cannot be more than 25 characters long.'
     }
   };
 

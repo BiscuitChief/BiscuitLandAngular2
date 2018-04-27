@@ -5,7 +5,18 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../environments/environment';
+
 export class ServiceHelper {
+
+  static httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'my-auth-token'
+    })
+  };
+
+  static API_URL = environment.apiUrl;
 
   constructor() {
   }
