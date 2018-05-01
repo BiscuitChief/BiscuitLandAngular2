@@ -10,6 +10,21 @@ namespace BiscuitChief.Controllers
 {
     public class RecipesController : ApiController
     {
+        [Route("api/recipes/canedit")]
+        [HttpGet]
+        public IHttpActionResult CanUserEditRecipes()
+        {
+            try
+            {
+                return Ok(User.IsInRole("FULLACCESS"));
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
+
         [Route("api/recipes/categories")]
         [HttpGet]
         public IHttpActionResult GetAllCategories()

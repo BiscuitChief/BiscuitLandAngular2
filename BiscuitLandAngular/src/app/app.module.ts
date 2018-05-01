@@ -22,6 +22,8 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { LogoutComponent } from './logout/logout.component';
 import { DatabaseScriptsComponent } from './database-scripts/database-scripts.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
     RecipeSearchComponent,
     LogoutComponent,
     DatabaseScriptsComponent,
-    ManageUsersComponent
+    ManageUsersComponent,
+    RecipeCreateComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,

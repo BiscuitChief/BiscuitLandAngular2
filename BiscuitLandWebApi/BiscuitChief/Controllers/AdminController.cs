@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Text;
+using BiscuitChief.Models;
 
 namespace BiscuitChief.Controllers
 {
@@ -88,7 +89,33 @@ namespace BiscuitChief.Controllers
                 return Ok("Success");
             }
             catch (Exception ex)
-            { return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError); }
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        [Authorize(Roles = "FULLACCESS")]
+        [Route("api/AddNewUser")]
+        [HttpPost]
+        public IHttpActionResult AddNewUser(Login login)
+        {
+            try
+            {
+                string resultmsg = string.Empty;
+
+                if (User.IsInRole("ADMIN"))
+                { resultmsg = login.AddNewUser(); }
+                else
+                { resultmsg = "Success"; }
+
+                return Ok(resultmsg);
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
         }
     }
 }

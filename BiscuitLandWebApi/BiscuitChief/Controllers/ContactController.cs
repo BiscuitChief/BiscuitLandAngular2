@@ -32,7 +32,10 @@ namespace BiscuitChief.Controllers
                 return Ok(result);
             }
             catch (Exception ex)
-            { return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError); }
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
         }
     }
 }

@@ -18,7 +18,10 @@ namespace BiscuitChief.Controllers
             try
             { return Ok(Models.NavItem.GetTopNavigation()); }
             catch(Exception ex)
-            { return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError); }
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
         }
     }
 }

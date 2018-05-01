@@ -1,3 +1,34 @@
-<p>
-  manage-users works!
-</p>
+<div>
+  Please enter the new user information below.
+</div>
+<br/>
+<form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="InputForm">
+    <ul class="FormFields">
+      <li>
+        <label>User Name:</label>
+        <input formControlName="userName" placeholder="User Name" />
+        <span [hidden]="!(formErrors.userName)" class="ErrorMsg">
+          {{formErrors.userName}}
+        </span>
+      </li>
+      <li>
+        <label>Password:</label>
+        <input formControlName="password" placeholder="Password" type="password" />
+        <span [hidden]="!(formErrors.password)" class="ErrorMsg">
+          {{formErrors.password}}
+        </span>
+      </li>
+      <li>
+        <label></label>
+        <input type="submit" id="btnSubmit" class="BtnSubmit" value="Submit" [disabled]="loginForm.invalid || disableButton" />
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="results">
+    {{results}}
+  </div>
+  <div *ngIf="errMsg" class="ErrorMsg">
+    {{errMsg}}
+  </div>
+</form>

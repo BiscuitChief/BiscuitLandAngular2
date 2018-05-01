@@ -26,4 +26,11 @@ export class LoginService {
       .map(rsp => "")
       .catch(ServiceHelper.handleError);
   }
+
+  addNewUser(logininfo: LoginCredential): Observable<string> {
+    return this.http
+      .post(ServiceHelper.API_URL + 'api/AddNewUser', logininfo, ServiceHelper.httpOptions)
+      .map(rsp => rsp as string)
+      .catch(ServiceHelper.handleError);
+  }
 }

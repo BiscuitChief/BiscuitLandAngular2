@@ -20,22 +20,29 @@ namespace BiscuitChief.Controllers
         {
             //try { PortalUtility.ValidateAntiForgeryToken(); }
             //catch { return new PortalUtility.PlainTextResult("Invalid Request Token", HttpStatusCode.BadRequest); }
-            
-            bool isvalidlogin = Models.Login.ValidateLogin(login.UserName, login.Password);
-
-            if (isvalidlogin)
+            try
             {
-                FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.UserName, DateTime.Now, DateTime.Now.AddMinutes(30), true, "");
-                String cookiecontents = FormsAuthentication.Encrypt(authTicket);
-                HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, cookiecontents) { Expires = authTicket.Expiration, Path = FormsAuthentication.FormsCookiePath };
-                HttpContext.Current.Response.Cookies.Add(cookie);
+                bool isvalidlogin = Models.Login.ValidateLogin(login.UserName, login.Password);
 
-                return Ok();
+                if (isvalidlogin)
+                {
+                    FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1, login.UserName, DateTime.Now, DateTime.Now.AddMinutes(30), true, "");
+                    String cookiecontents = FormsAuthentication.Encrypt(authTicket);
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, cookiecontents) { Expires = authTicket.Expiration, Path = FormsAuthentication.FormsCookiePath };
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+
+                    return Ok();
+                }
+                else
+                {
+                    LogoutTasks();
+                    return new PortalUtility.PlainTextResult("Authentication Exception", HttpStatusCode.NotFound);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                LogoutTasks();
-                return new PortalUtility.PlainTextResult("Authentication Exception", HttpStatusCode.NotFound);
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
             }
         }
 

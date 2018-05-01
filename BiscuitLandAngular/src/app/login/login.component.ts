@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
 
   validationMessages = {
     'userName': {
-      'required': 'First Name is required.',
-      'maxlength': 'FirstName cannot be more than 25 characters long.'
+      'required': 'User Name is required.',
+      'maxlength': 'User Name cannot be more than 25 characters long.'
     },
     'password': {
       'required': 'Password is required.',
@@ -78,16 +78,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.errMsg = null;
-    this.disableButton = true;
-    this.loginInfo = this.loginForm.value;
+    if (this.loginForm.valid) {
+      this.errMsg = null;
+      this.disableButton = true;
+      this.loginInfo = this.loginForm.value;
 
-    this.loginService.login(this.loginInfo)
-      .subscribe(msg => this.processLogin(msg),
-      errMsg => this.errMsg = <any>errMsg,
-      () => this.disableButton = false);
+      this.loginService.login(this.loginInfo)
+        .subscribe(msg => this.processLogin(msg),
+        errMsg => this.errMsg = <any>errMsg,
+        () => this.disableButton = false);
 
-    this.loginForm.reset();
+      this.loginForm.reset();
+    }
   }
 
   processLogin(results: string) {
