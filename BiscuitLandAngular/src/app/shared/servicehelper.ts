@@ -23,6 +23,13 @@ export class ServiceHelper {
 
   static handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
-    return Observable.throw(error.error);
+    if (error.status == "401") {
+      window.location.href = "/login";
+    }
+    if (typeof error.error === "string") {
+      return Observable.throw(error.error);
+    } else {
+      return Observable.throw(error.error.Message);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RestangularModule, Restangular } from 'ngx-restangular';
@@ -6,6 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
+import { NavitemService } from './services/navitem.service';
+import { LoginService } from './services/login.service';
+import { ContactService } from './services/contact.service';
+import { DatabaseScriptsService } from './services/database-scripts.service';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
@@ -15,10 +20,8 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { LogoutComponent } from './logout/logout.component';
-
-import { NavitemService } from './services/navitem.service';
-import { LoginService } from './services/login.service';
-import { ContactService } from './services/contact.service';
+import { DatabaseScriptsComponent } from './database-scripts/database-scripts.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { ContactService } from './services/contact.service';
     ContactComponent,
     LoginComponent,
     RecipeSearchComponent,
-    LogoutComponent
+    LogoutComponent,
+    DatabaseScriptsComponent,
+    ManageUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +45,11 @@ import { ContactService } from './services/contact.service';
     ReactiveFormsModule
 ],
   providers: [
+    Title,
     NavitemService,
     LoginService,
-    ContactService
+    ContactService,
+    DatabaseScriptsService
   ],
   bootstrap: [AppComponent]
 })

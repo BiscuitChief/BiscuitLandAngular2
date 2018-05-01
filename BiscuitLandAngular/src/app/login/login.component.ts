@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errMsg: string;
   return: string = '';
+  disableButton: boolean = false;
 
   formErrors = {
     'userName': '',
@@ -78,11 +79,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.errMsg = null;
+    this.disableButton = true;
     this.loginInfo = this.loginForm.value;
 
     this.loginService.login(this.loginInfo)
       .subscribe(msg => this.processLogin(msg),
-      errMsg => this.errMsg = <any>errMsg);
+      errMsg => this.errMsg = <any>errMsg,
+      () => this.disableButton = false);
 
     this.loginForm.reset();
   }

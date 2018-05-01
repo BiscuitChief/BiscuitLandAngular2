@@ -29,7 +29,7 @@
       </li>
       <li>
         <label></label>
-        <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid" />
+        <input type="submit" id="btnSubmit" class="BtnSubmit" value="Login" [disabled]="loginForm.invalid || disableButton" />
       </li>
     </ul>
   </div>

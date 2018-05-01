@@ -1,0 +1,22 @@
+<div class="InputForm">
+  <ul class="FormFields">
+    <li *ngIf="allowDbScripts">
+      <label style="width:130px;">Database Scripts:</label>
+      <a href="/DownloadFiles/BiscuitChiefDatabaseScripts.zip" download>&lt; Download &gt;</a>
+    </li>
+    <li *ngIf="allowRecipeScripts">
+      <label style="width:130px;">Recipe Data:</label>
+      <a href="/DownloadFiles/DataRestoreScript.txt" download>&lt; Download &gt;</a>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="allowGenerateBackup">
+  <div style="padding-top:10px;">
+    <input id="btnBackupRecipes" class="BtnSubmit" type="button" value="Backup Recipe Data" (click)="CreateBackupScript()" [disabled]="disableButton" />
+  </div>
+  <div *ngIf="generateResults">{{ generateResults }}</div>
+</div>
+<div *ngIf="errMsg" class="ErrorMsg">
+  {{errMsg}}
+</div>

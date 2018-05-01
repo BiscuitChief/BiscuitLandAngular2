@@ -35,7 +35,7 @@ namespace BiscuitChief.Controllers
             else
             {
                 LogoutTasks();
-                return new PortalUtility.PlainTextResult("Authentication Exception", HttpStatusCode.Unauthorized);
+                return new PortalUtility.PlainTextResult("Authentication Exception", HttpStatusCode.NotFound);
             }
         }
 

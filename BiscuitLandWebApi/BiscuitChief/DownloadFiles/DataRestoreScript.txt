@@ -18,37 +18,13 @@ call Recipe_SaveIngredient(0,pRecipeID,'salt',1,'tsp','','ING',5,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'whole milk',1.25,'cup','1 to 1 1/2 cups','ING',6,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'Yukon gold potatoes',2,'lbs','about 4-6 potatoes','ING',7,pIngredientID);
 call Recipe_SaveDirections(0,pRecipeID,0,'Peel, rinse, and chop the potatoes into ½-1 inch chunks.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,1,'Peel, rinse, and chop the potatoes into ½-1 inch chunks.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,2,'Place the potatoes in a large saucepan or pot, and cover with water, salting lightly.  Bring to a boil over high heat.  Reduce the heat to a simmer over medium-low and cook until the potatoes are tender and easily break apart when poked with a fork, about 15-20 minutes.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,3,'Place the potatoes in a large saucepan or pot, and cover with water, salting lightly.  Bring to a boil over high heat.  Reduce the heat to a simmer over medium-low and cook until the potatoes are tender and easily break apart when poked with a fork, about 15-20 minutes.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,4,'Drain the potatoes and transfer to the bowl of a food processor.  Wipe out the pan for later use.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,5,'Drain the potatoes and transfer to the bowl of a food processor.  Wipe out the pan for later use.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,6,'Add the butter, garlic, and salt to the potatoes in the food processor.  Pulse until the butter is melted and incorporated into the potatoes, about 10 brief pulses.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,7,'Add the butter, garlic, and salt to the potatoes in the food processor.  Pulse until the butter is melted and incorporated into the potatoes, about 10 brief pulses.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,8,'Add 1 cup of the milk through the feed tube and continue to process until the mixture is smooth and creamy, about 20 seconds, scraping down the sides of the bowl as needed.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,9,'Add 1 cup of the milk through the feed tube and continue to process until the mixture is smooth and creamy, about 20 seconds, scraping down the sides of the bowl as needed.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,10,'Return the potato mixture to the now empty saucepan and set over medium heat.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,11,'Return the potato mixture to the now empty saucepan and set over medium heat.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,12,'Mix in the cheeses until completely melted and incorporated, stirring frequently.  The mixture will be thick and elastic.  If the mixture is too thick or difficult to stir, add the remaining ½ cup of milk a little bit at a time until the texture is loose and creamy.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,13,'Mix in the cheeses until completely melted and incorporated, stirring frequently.  The mixture will be thick and elastic.  If the mixture is too thick or difficult to stir, add the remaining ½ cup of milk a little bit at a time until the texture is loose and creamy.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,14,'Adjust seasonings as necessary with salt and pepper.  Serve immediately.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,15,'Adjust seasonings as necessary with salt and pepper.  Serve immediately.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,16,'Peel, rinse, and chop the potatoes into ½-1 inch chunks.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,17,'Place the potatoes in a large saucepan or pot, and cover with water, salting lightly.  Bring to a boil over high heat.  Reduce the heat to a simmer over medium-low and cook until the potatoes are tender and easily break apart when poked with a fork, about 15-20 minutes.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,18,'Peel, rinse, and chop the potatoes into ½-1 inch chunks.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,19,'Drain the potatoes and transfer to the bowl of a food processor.  Wipe out the pan for later use.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'Add the butter, garlic, and salt to the potatoes in the food processor.  Pulse until the butter is melted and incorporated into the potatoes, about 10 brief pulses.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,21,'Add 1 cup of the milk through the feed tube and continue to process until the mixture is smooth and creamy, about 20 seconds, scraping down the sides of the bowl as needed.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,22,'Return the potato mixture to the now empty saucepan and set over medium heat.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,23,'Mix in the cheeses until completely melted and incorporated, stirring frequently.  The mixture will be thick and elastic.  If the mixture is too thick or difficult to stir, add the remaining ½ cup of milk a little bit at a time until the texture is loose and creamy.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,24,'Adjust seasonings as necessary with salt and pepper.  Serve immediately.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,25,'Place the potatoes in a large saucepan or pot, and cover with water, salting lightly.  Bring to a boil over high heat.  Reduce the heat to a simmer over medium-low and cook until the potatoes are tender and easily break apart when poked with a fork, about 15-20 minutes.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,26,'Drain the potatoes and transfer to the bowl of a food processor.  Wipe out the pan for later use.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,27,'Add the butter, garlic, and salt to the potatoes in the food processor.  Pulse until the butter is melted and incorporated into the potatoes, about 10 brief pulses.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,28,'Add 1 cup of the milk through the feed tube and continue to process until the mixture is smooth and creamy, about 20 seconds, scraping down the sides of the bowl as needed.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,29,'Return the potato mixture to the now empty saucepan and set over medium heat.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,30,'Mix in the cheeses until completely melted and incorporated, stirring frequently.  The mixture will be thick and elastic.  If the mixture is too thick or difficult to stir, add the remaining ½ cup of milk a little bit at a time until the texture is loose and creamy.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,31,'Adjust seasonings as necessary with salt and pepper.  Serve immediately.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Place the potatoes in a large saucepan or pot, and cover with water, salting lightly.  Bring to a boil over high heat.  Reduce the heat to a simmer over medium-low and cook until the potatoes are tender and easily break apart when poked with a fork, about 15-20 minutes.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Drain the potatoes and transfer to the bowl of a food processor.  Wipe out the pan for later use.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Add the butter, garlic, and salt to the potatoes in the food processor.  Pulse until the butter is melted and incorporated into the potatoes, about 10 brief pulses.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Add 1 cup of the milk through the feed tube and continue to process until the mixture is smooth and creamy, about 20 seconds, scraping down the sides of the bowl as needed.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Return the potato mixture to the now empty saucepan and set over medium heat.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Mix in the cheeses until completely melted and incorporated, stirring frequently.  The mixture will be thick and elastic.  If the mixture is too thick or difficult to stir, add the remaining ½ cup of milk a little bit at a time until the texture is loose and creamy.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'Adjust seasonings as necessary with salt and pepper.  Serve immediately.','DIR',pDirectionID);
 call Recipe_SaveRecipeCategory(pRecipeID,'VEGI');
 
 
@@ -163,6 +139,23 @@ call Recipe_SaveDirections(0,pRecipeID,170,'At the very end with just approximat
 call Recipe_SaveDirections(0,pRecipeID,180,'Let sit for 10 minutes before serving.','DIR',pDirectionID);
 
 
+call Recipe_SaveRecipe('Better Milk Biscuits','Prep time 10 min. Cook time 11 mins. Makes 8 biscuits',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'White whole wheat flour',2,'cups','plus 1/2 half cup for dusting','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Baking soda',0.25,'teaspoon','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Baking powder',1,'tablespoon','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'teaspoon','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'raw cashwes',0.6666,'cup','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'water',2,'tablespoon','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'milk',1,'cup','','ING',6,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Preheat oven to 400','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'mix the dry ingredients together','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'in a food processor mix the cashews and water until they form a clump of cashew butter','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Add the dry ingredients (except flour) and milk to the food processor and mix for 30 seconds','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'put flour in a bowl and add wet mixture then hand combine','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Form into biscuits about 1/2 inch thick and bake for 20 minutes or until bottom is brown','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
 call Recipe_SaveRecipe('Blueberry Crumble Cheesecake Bars','',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'brown sugar',2,'tbsp','','ING',0,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'butter',0.25,'cup','melted','ING',0,pIngredientID);
@@ -248,12 +241,13 @@ call Recipe_SaveDirections(0,pRecipeID,150,'Brush the top with the remaining gla
 
 call Recipe_SaveRecipe('Bread Machine Bread','Original recipe makes 1 -1 1/2 pound loaf',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'active dry yeast',1.25,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'bread flour',3,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sugar',3,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'vegetable oil',3,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'water',1,'cup','warm (110 degrees F/45 degrees C)','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'Settings: White bread, light crust, 1.5lbs loaf','DIR',pDirectionID);
+call Recipe_SaveIngredient(0,pRecipeID,'bread flour',3,'cup','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'tsp','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sugar',3,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vegetable oil',3,'tbsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'water',1,'cup','warm (110 degrees F/45 degrees C)','ING',5,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Settings: White bread, light crust, 1.5lbs loaf','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Brownies','Zombie Brownies',0,pRecipeID);
@@ -705,20 +699,21 @@ call Recipe_SaveDirections(0,pRecipeID,50,'Cover and cook on low for 10-12 hours
 call Recipe_SaveDirections(0,pRecipeID,60,'Serve hot over mashed taters then ladle some of the sauce over it','DIR',pDirectionID);
 
 
-call Recipe_SaveRecipe('Curry-Coconut Sauce','',0,pRecipeID);
+call Recipe_SaveRecipe('Curry-Coconut Sauce','Curry-Coconut Sauce',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'crushed red pepper flakes',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'curry powder',1.25,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'fresh basil leaves',0.5,'cup','chopped','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'garlic',1.5,'tbsp','minced','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'lemon zest',1,'','1 lemon','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'light coconut milk',1.25,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'olive oil',2,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'tsp','or to taste','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'soy sauce',2,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sugar',2,'tbsp','or to taste','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'In a small bowl, combine the coconut milk, soy sauce, sugar, and 1/2 teaspoon kosher salt.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'Place a wok or skillet over medium-high heat. Add olive oil and heat for 30 seconds. Add red pepper flakes, zest, garlic, and curry powder and stir-fry until fragrant, about 15 seconds.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,30,'Add the coconut-milk mixture and bring to a boil. Cook until the sauce thickens slightly, 1 1/2 minutes. Add basil. Pour into a bowl.','DIR',pDirectionID);
+call Recipe_SaveIngredient(0,pRecipeID,'curry powder',1.25,'tbsp','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'fresh basil leaves',0.5,'cup','chopped','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'garlic',1.5,'tbsp','minced','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'lemon zest',1,'','1 lemon','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'light coconut milk',1.25,'cup','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'olive oil',2,'tbsp','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'tsp','or to taste','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'soy sauce',2,'tbsp','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sugar',2,'tbsp','or to taste','ING',9,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'In a small bowl, combine the coconut milk, soy sauce, sugar, and 1/2 teaspoon kosher salt.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Place a wok or skillet over medium-high heat. Add olive oil and heat for 30 seconds. Add red pepper flakes, zest, garlic, and curry powder and stir-fry until fragrant, about 15 seconds.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Add the coconut-milk mixture and bring to a boil. Cook until the sauce thickens slightly, 1 1/2 minutes. Add basil. Pour into a bowl.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Easy Oreo Truffles','',0,pRecipeID);
@@ -771,7 +766,7 @@ call Recipe_SaveDirections(0,pRecipeID,0,'Put the chickpeas in a large bowl and 
 call Recipe_SaveDirections(0,pRecipeID,1,'Place the drained, uncooked chickpeas and the onions in the bowl of a food processor fitted with a steel blade. Add the parsley, cilantro, salt, hot pepper, garlic, and cumin. Process until blended but not pureed.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,2,'Sprinkle in the baking powder and 4 tablespoons of the flour, and pulse. You want to add enough bulgur or flour so that the dough forms a small ball and no longer sticks to your hands. Turn into a bowl and refrigerate, covered, for several hours.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,3,'Form the chickpea mixture into balls about the size of walnuts, or use a falafel scoop, available in Middle-Eastern markets.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,4,'Heat 3 inches of oil to 375ºF in a deep pot or wok and fry 1 ball to test. If it falls apart, add a little flour. Then fry about 6 balls at once for a few minutes on each side, or until golden brown. Drain on paper towels. Stuff half a pita with falafel balls, chopped tomatoes, onion, green pepper, and pickled turnips. Drizzle with tahina thinned with water.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'DEEP FRY: 340 degrees FOR 3 MINUTES. STOVE TOP - Heat 3 inches of oil to 375ºF in a deep pot or wok and fry 1 ball to test. If it falls apart, add a little flour. Then fry about 6 balls at once for a few minutes on each side, or until golden brown. Drain on paper towels. Stuff half a pita with falafel balls, chopped tomatoes, onion, green pepper, and pickled turnips. Drizzle with tahina thinned with water.','DIR',pDirectionID);
 call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
@@ -788,6 +783,40 @@ call Recipe_SaveDirections(0,pRecipeID,40,'Once it is cooked, take it out and sh
 call Recipe_SaveDirections(0,pRecipeID,50,'Add 1 package of cream cheese (just throw it on top!) and let sit for about 1/2 hour.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,60,'It may look at little strange at this point. Don''t worry. Stir in the cream cheese.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,70,'Serve over rice or in warm flour tortillas.','DIR',pDirectionID);
+
+
+call Recipe_SaveRecipe('Funfetti Cupcakes','https://minimalistbaker.com/one-bowl-vegan-funfetti-cupcakes/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'Cupcakes',0,'','','HDR',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'non-dairy milk',1,'cup','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vegan butter',0.5,'cup','softened','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vinegar',1,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'granulated sugar',1,'cup','scant cup?  whatever that is','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',1,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'all-purpose flour',1.5,'cup','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'baking powder',1.5,'tsp','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'baking soda',0.5,'tsp','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.25,'tsp','','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'rainbow sprinkles',0.3333,'cup','plus more for topping','ING',10,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Frosting',0,'','','HDR',11,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vegan butter',0.5,'cup','softened','ING',12,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'powdered sugar',2.5,'cup','2 1/2 - 3 cups','ING',13,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',0.25,'tsp','','ING',14,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'non-dairy milk',1,'splash','','ING',15,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Cupcakes','HDR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Preheat oven to 350 degrees F (176 C) and line a standard muffin holder with 12 paper liners.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'In a liquid measuring cup, measure out non-dairy milk and add vinegar or lemon juice. Let set to curdle/activate.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Add softened butter to a large mixing bowl and cream with a mixer. Then add sugar and vanilla and beat until combined and fluffy - about 2 minutes.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Add dry ingredients (omitting sprinkles) to a sifter in this order: 1 cup flour, baking soda, baking powder, salt, and then remaining 1/2 cup flour.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Sift over butter/sugar mixture alternating with the almond milk mixture. Blend until until well incorporated and no large lumps remain.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Add sprinkles and gently fold/stir with a rubber spatula or mixing spoon.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'Divide evenly among cupcake holders making sure NOT to overfill. These do best at 3/4 of the way up.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,8,'Bake on a center rack for 20-24 minutes, or until a toothpick inserted into the center comes out clean. They will only have a very, very slight golden brown color.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,9,'Let cool completely on a cooling rack. In the meantime, prepare frosting.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,10,'Frosting','HDR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,11,'Wipe clean your mixing bowl and add softened butter. Beat until light and fluffy. Then add vanilla and mix once more.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,12,'Add powdered sugar 1/2 cup at a time and continue mixing until thick and creamy. Drizzle in a little non-dairy milk to thin. You want this frosting to be very thick so it will hold its shape once on the cupcakes.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,13,'Once cooled, frost cupcakes and top with sprinkles. Serve immediately. Store leftovers covered at room temperature or refrigerated.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('General Tso''s Chicken','',0,pRecipeID);
@@ -808,6 +837,16 @@ call Recipe_SaveDirections(0,pRecipeID,50,'Next added some chili pods to my wok 
 call Recipe_SaveDirections(0,pRecipeID,60,'Once I had a decent aroma, I turned the heat onto high and added the fried chicken pieces and allowed them to reheat and crisp up.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,70,'Be careful not to burn the chili pods, if they start to burn, remove them.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,80,'Once crisp I added the sauce and cooked and tossed until it was thick and bubbly.','DIR',pDirectionID);
+
+
+call Recipe_SaveRecipe('Graham Cracker Crust','http://allrecipes.com/recipe/12254/graham-cracker-crust-i/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'graham cracker crumbs',1.5,'cup','finely ground','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'white sugar',0.3333,'cup','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'butter',6,'tbsp','melted','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cinnamon',0.5,'tsp','ground','ING',3,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Mix graham cracker crumbs, sugar, melted butter or margarine, and cinnamon until well blended . Press mixture into an 8 or 9 inch pie plate.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Bake at 375 degrees F (190 degrees C) for 7 minutes. Cool. If recipe calls for unbaked pie shell, just chill for about 1 hour.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Grapenut ice cream','',0,pRecipeID);
@@ -852,18 +891,19 @@ call Recipe_SaveDirections(0,pRecipeID,60,'Squeeze out some of the liquid (not a
 call Recipe_SaveDirections(0,pRecipeID,70,'Put in a container, mix in salt to taste, and refrigerate.  Note, do not over salt as the salt flavor will become stronger as the cheese cools and sets in the refrigerator.','DIR',pDirectionID);
 
 
-call Recipe_SaveRecipe('Japanese Steakhouse White Sauce','',0,pRecipeID);
-call Recipe_SaveIngredient(0,pRecipeID,'butter',1,'tbsp','melted','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'cayenne pepper',0,'dash','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'garlic powder',0.5,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'mayonnaise',1.25,'cup','use real mayo (Hellmann''s for example)','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'paprika',0.25,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sugar',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'tomato paste',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'water',0.25,'cup','room temperature','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'Using a fork or a whisk, blend all ingredients together thoroughly until well mixed and the sauce is smooth.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'Refrigerate overnight to allow flavors to blend.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,30,'Bring to room temperature before serving.','DIR',pDirectionID);
+call Recipe_SaveRecipe('Japanese Steakhouse White Sauce','White sauce',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'butter',1,'tbsp','melted, use vegan butter like Smart Balance','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cayenne pepper',0.25,'tsp','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'garlic powder',0.5,'tsp','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'mayonnaise',1.25,'cup','use vegan mayo','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'paprika',0.25,'tsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sugar',1,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'tomato paste',1,'tsp','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'water',0.125,'cup','room temperature, add water until desired consistency is reached, vegan mayo requires less water than regular mayo','ING',7,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Using a fork or a whisk, blend all ingredients together thoroughly until well mixed and the sauce is smooth.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Refrigerate overnight to allow flavors to blend.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Bring to room temperature before serving.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Kahlua Brownies With Browned Bbutter Kahlua Icing','',0,pRecipeID);
@@ -909,6 +949,44 @@ call Recipe_SaveDirections(0,pRecipeID,20,'In a large skillet brown ground beef 
 call Recipe_SaveDirections(0,pRecipeID,30,'Add oil to a medium frying pan. Heat to medium-high and fry tortillas one by one for 30 seconds (or until browned) on each side. Be sure to pop any bubbles that form while cooking. You want to keep the tortillas as flat as possible. Remove from pan and drain on paper towels.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,40,'Warm refried beans and pre-heat the oven to 400 degrees. Stack each pizza by first spreading a layer of refried beans, then a layer of meat followed by a layer of salsa. Now stack another tortilla on top. Stack cheese on top of that followed by tomatoes and green onions. Repeat until all pizzas are stacked.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,50,'Place on a baking sheet and put into the oven. Bake on 400 degrees for 8 minutes.','DIR',pDirectionID);
+
+
+call Recipe_SaveRecipe('Mini Vegan Chocolate Cheesecakes','https://lovingitvegan.com/mini-vegan-chocolate-oreo-cheesecakes/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'For the Crust',0,'','','HDR',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Oreos',22,'','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Vegan Butter',0.3333,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'For the Chocolate Cheesecake',0,'','','HDR',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Raw Cashews',2,'cups','soaked for 1 hour','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Lemon',0.5,'','juiced','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Vanilla Extract',1,'tsp','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Date Honey or Maple Syrup',0.5,'cup','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Coconut Milk',0.5,'cup','Full Fat','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Vegan Dark Chocolate',7,'oz','','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'For the Topping',0,'','','HDR',10,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Vegan Dark Chocolate',3.5,'oz','','ING',11,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Oreos',6,'','crushed','ING',12,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Place the cashew nuts into a bowl and cover with water. Leave to soak for 1 hour.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Add the oreos to a food processor and process into fine crumbs.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Melt the vegan butter and pour into the food processor while it''s running, so that it mixes evenly with the oreo crumbs.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Cut 12 strips of parchment paper to use on the bottom of a cupcake tray.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Holding the strip down with one hand, spoon out some of the oreo crust mix out on top.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Pat it down with a spoon.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'When all 12 are done, place the tray into the freezer to set.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'When your cashews are finished soaking, drain them and rinse with fresh water.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,8,'Add the cashews, lemon juice, vanilla extract and date honey or maple syrup to your blender jug.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,9,'Place the coconut milk into a pot and heat on the stove till it reaches a simmer.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,10,'Break up the 7oz of dark chocolate into a bowl, and when the coconut milk is simmering, pour it out over the chocolate, allowing to sit for a minute to give it a chance to melt.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,11,'With a hand whisk, whisk the chocolate sauce until smooth. If a few lumps of chocolate remain, that''s okay as it will all be blended anyway.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,12,'Pour this out into the blender jug with your other ingredients.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,13,'Blend until very smooth and until no graininess remains.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,14,'Spoon this out on top of the oreo crust and smooth down with the back of a spoon.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,15,'Return to the freezer to set completely. This can take around 4 hours.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,16,'When you''re ready to serve, melt the remaining 3.5oz dark chocolate over a double boiler or in the microwave by microwaving for 30 seconds at a time then taking it out to stir and then repeating until melted.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,17,'Spoon this on top of the cheesecakes and immediately add some crushed oreos so that it sticks onto the melted chocolate. Due to the coldness of the cheesecakes the chocolate will harden quickly.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,18,'Using a knife, run it along the sides of the cheesecakes to loosen them, and then tug gently on the parchment paper tags, and they will pop out perfectly.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,19,'Store any leftovers in the freezer, where they can remain permanently. No need to thaw them out before serving, they are ideal straight out the freezer.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+call Recipe_SaveImage(pRecipeID,'NTEHXJ2017082106592359.png','False','0');
 
 
 call Recipe_SaveRecipe('Nanny’s Sugar Cookies','',0,pRecipeID);
@@ -977,6 +1055,21 @@ call Recipe_SaveDirections(0,pRecipeID,40,'Fold 1/3 of the Snickers pies into th
 call Recipe_SaveDirections(0,pRecipeID,50,'Spread the filling into the pie crust.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,60,'Finally, drizzle the top with the remaining dulce de leche and scatter the remaining 1/3 of Snickers pieces on top.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,70,'Chill the pie for at least 3 hours before slicing and serving.','DIR',pDirectionID);
+
+
+call Recipe_SaveRecipe('Oatmeal Energy Bites','No bake oatmeal balls',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'almond butter',0.5,'cup','','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'coconut flakes',2,'tbsp','unsweetened','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'old fashioned oats',1,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'fig jam',2,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'chia seeds',1,'tsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',1,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'dark chocolate chips',0.25,'cup','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'hemp seeds',3,'tsp','','ING',7,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'In a large bowl mix together the almond butter, coconut flakes, oats, and fig jam until well combined.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Add in the chia seeds, hemp seeds, vanilla, and chocolate chips.  You may need to use your hands to mix together.  If the mixture is too dry you can add a little more almond butter to help it stick together.  If it''s too wet add a little more oats.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Form mixture into 12 balls and place in an airtight container.  You can store these in the fridge for up to one week, or the freezer for one month.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Peanut Butter Cheesecake','',0,pRecipeID);
@@ -1122,6 +1215,25 @@ call Recipe_SaveDirections(0,pRecipeID,190,'Stir in the pecan pieces.','DIR',pDi
 call Recipe_SaveDirections(0,pRecipeID,200,'Cover and chill. Stir together before serving.','DIR',pDirectionID);
 
 
+call Recipe_SaveRecipe('Pumpkin Pie','http://www.yummymummykitchen.com/2017/10/vegan-pumpkin-pie.html',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'pumpkin',15,'oz','1 can','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'coconut milk',1,'cup','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'maple syrup',0.3333,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'brown sugar',2,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'pumpkin pie spice',1,'tbsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'corn starch',3,'tbsp','organic','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sea salt',0.5,'tsp','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',1,'tsp','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'9-inch pie shell',1,'','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'dairy free whipped cream',0,'','for serving','ING',9,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Preheat the oven to 350 degrees F.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'In a medium sized mixing bowl, whisk together the pumpkin, coconut milk, syrup, brown sugar, pumpkin pie spice, corn starch, salt, and vanilla until very smooth.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Pour into the par-baked pie crust and carefully transfer to the oven.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Bake for 35-45 minutes, until the pumpkin pie filling has set. Be sure to check half way through baking and cover the crust edges with foil or a crust shield if they are getting dark. It''s okay if it still jiggles a bit, it sets while it cools overnight.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Remove from the oven and let the pie cool completely. Transfer to the refrigerator to set up over night. Serve chilled with dairy free whipped cream.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
 call Recipe_SaveRecipe('Quick Whole Wheat and Molasses Bread','',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'baking soda',1,'tsp','','ING',0,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'buttermilk',1.6666,'cup','or plain yogurt','ING',0,pIngredientID);
@@ -1158,6 +1270,43 @@ Serving Size: 50g       Calories: 27kcal       Carbohydrate: 1.4g       Sugar: 0
 call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
+call Recipe_SaveRecipe('Raw Christmas Cherry Cookies','http://www.myhealthydessert.com/recipes/raw/raw-christmas-cherry-cookies/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'almonds and walnuts',1,'cup','Or other nuts of your choice','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'shredded coconut',2,'tbsp','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'coconut oil',1,'tbsp','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'maple syrup',2,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cocoa or cacao powder',2,'tbsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'dried cherries',6,'','','ING',5,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Soak your dried cherries in some water for about an hour. Then take them out of the water, but keep the water as well.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Put the nuts and the shredded coconut into the food processor and grind them.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Add the rest of the ingredients and grind until everything is well combined and has the consistency of wet sand. It should stay together when you press it. If the mixture feels too dry, add a few drops of water (you can use the cherry water too).','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Take spoonfuls of the mixture and shape them like balls.The mixture is a little dry and you may not be able to roll balls, so just squeeze the mixture to make it look like a ball. Add half a candied cherry or a nut and press the ball between your hands to make it flatter. Don’t worry: once chilled, everything blends well and the cookie stays together.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'You should be able to make between 12 and 15 small cookies.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
+call Recipe_SaveRecipe('Saffron Buns','Saffron Buns',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'Almond Milk',2,'cup','','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'maple syrup',0.25,'cup','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'coconut milk',0.5,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'saffron',1,'g','Optional, saffron is expensive so do a test run without it','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Yeast',1.3333,'tbsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Bread flour',4,'cup','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Raisens',0,'','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'oil',0,'','for brushing','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'flour',0,'','for kneading dough','ING',8,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'heat the milk slowly and stir in the maple syrup, coconut oil and saffron','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'remove from heat when it’s finger warm (37°c)','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'put the yeast in a bowl and pour in the milk mix. stir until smooth','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'add the flour a little at a time. let sit for 40 minutes, preferably someplace warm','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'knead the dough with more flour until un-sticky and workable','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'form into cute shapes and pop in the raisins','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'let sit for 20 minutes and preheat the oven to 430','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'brush the buns a little bit of oil','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,8,'bake for about 8-10 minutes until gentle browned','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
 call Recipe_SaveRecipe('Sausage Gravy','',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'butter',3,'tbsp','','ING',0,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'flour',3,'tbsp','','ING',0,pIngredientID);
@@ -1171,23 +1320,43 @@ call Recipe_SaveDirections(0,pRecipeID,30,'Add the milk into the pan and stir co
 call Recipe_SaveDirections(0,pRecipeID,40,'Return sausage to the pan and add salt and pepper to taste.','DIR',pDirectionID);
 
 
-call Recipe_SaveRecipe('Sesame Salad Recipe','',0,pRecipeID);
+call Recipe_SaveRecipe('Scalloped Potatoes','https://www.bettycrocker.com/recipes/creamy-scalloped-potatoes/ee79f6de-fee8-4115-b7c1-0e4a731b7b8c',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'medium boiling or baking potatoes',6,'','','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'butter or margarine',6,'tbsp','use vegan butter','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'small onion',1,'','1/4 cup','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'all-purpose flour',1,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',1,'tsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'black pepper',0.25,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'milk',2.5,'cup','almond/soy milk','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'butter or margarine',1,'tbsp','use vegan butter','ING',7,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Heat oven to 350ºF. Grease bottom and side of 2-quart casserole.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Scrub potatoes; peel if desired. Cut into 1/8-inch slices to measure about 4 cups.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Melt 3 tablespoons butter in 2-quart saucepan over medium heat. Cook onion in butter about 2 minutes, stirring occasionally, until tender. Stir in flour, salt and pepper. Cook, stirring constantly, until smooth and bubbly; remove from heat.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Stir in milk. Heat to boiling, stirring constantly. Boil and stir 1 minute.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Spread potatoes in casserole. Pour sauce over potatoes. Dot with 1 tablespoon butter.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Cover and bake 30 minutes. Uncover and bake 1 hour to 1 hour 10 minutes longer or until potatoes are tender. Let stand 5 to 10 minutes before serving.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
+call Recipe_SaveRecipe('Sesame Salad Recipe','Sesame Salad, replace chicken to make vegan.',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'black pepper',0.25,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'bow tie pasta',16,'oz','1 package','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'chicken',3,'cup','cooked, shredded or cut into small chunks','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'cilantro',0.3333,'cup','chopped','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'ginger',0.5,'tsp','ground','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'green onions',0.3333,'cup','sliced','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'rice vinegar',0.3333,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sesame oil',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sesame seeds',0.25,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'soy sauce',0.3333,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sugar',3,'tbsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'vegetable oil',0.5,'cup','','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'Heat a skillet over medium high heat. Add sesame seeds and cook while stirring until they are lightly browned. Remove from heat and set aside.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'Bring a large pot of water to a boil and cook pasta according to package direction until Al Dente. Drain pasta and cool. Transfer to a large serving bowl.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,30,'In a jar with a tight fitting lid combine vegetable oil, rice vinegar, soy sauce, sesame oil, sugar, ginger, black pepper and sesame seeds. Shake well.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,40,'Pour the dressing over the noodles. Add chicken and mix well. Add green onions and cilantro and serve.','DIR',pDirectionID);
+call Recipe_SaveIngredient(0,pRecipeID,'bow tie pasta',16,'oz','1 package','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'chicken',3,'cup','cooked, shredded or cut into small chunks','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cilantro',0.3333,'cup','chopped','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'ginger',0.5,'tsp','ground','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'green onions',0.3333,'cup','sliced','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'rice vinegar',0.3333,'cup','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sesame oil',1,'tsp','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sesame seeds',0.25,'cup','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'soy sauce',0.3333,'cup','','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sugar',3,'tbsp','','ING',10,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vegetable oil',0.5,'cup','','ING',11,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Heat a skillet over medium high heat. Add sesame seeds and cook while stirring until they are lightly browned. Remove from heat and set aside.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Bring a large pot of water to a boil and cook pasta according to package direction until Al Dente. Drain pasta and cool. Transfer to a large serving bowl.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'In a jar with a tight fitting lid combine vegetable oil, rice vinegar, soy sauce, sesame oil, sugar, ginger, black pepper and sesame seeds. Shake well.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Pour the dressing over the noodles. Add chicken and mix well. Add green onions and cilantro and serve.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'MEAT');
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
 call Recipe_SaveRecipe('Shortbread Cookies','Vegan',0,pRecipeID);
@@ -1376,27 +1545,56 @@ call Recipe_SaveDirections(0,pRecipeID,20,'Stir in coarsely chopped artichoke he
 call Recipe_SaveDirections(0,pRecipeID,30,'Serve hot with chips or crackers or toasted baguettes.','DIR',pDirectionID);
 
 
-call Recipe_SaveRecipe('Taco Stuffed Shells','',0,pRecipeID);
+call Recipe_SaveRecipe('Taco Stuffed Shells','Easy to sub in vegan options.  Use vegan shredded cheese, cream cheese, and sour cream.  Sub in vegi/smart grounds instead of beef.',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'cheddar cheese',1,'cup','shredded','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'cream cheese',4,'oz','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'green onions',3,'','chopped','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'ground beef',1,'lbs','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'large pasta shells',12,'','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'Monterey jack cheese',1,'cup','shredded','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'salsa',1,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sour cream',1,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'taco sauce',1,'cup','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'taco seasoning',1,'package','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'tortilla chips',1.5,'cup','crushed','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'In a fry pan cook ground beef and add taco seasoning','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'Add cream cheese cover and simmer until cheese is melted. Blend well.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,30,'Set aside and allow to fully cool.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,40,'While burger is cooking cook the pasta shells, drain and toss well with butter.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,50,'Pour salsa in the bottom of a 9 x 13 inch baking dish.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,60,'Stuff each shell with the meat mixture. Place the stuffed shells in the baking dish and cover the tops of the shells with taco sauce.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,70,'Cover and bake in the oven at 350 degrees for 30 minutes.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,80,'After 30 minutes, uncover, and sprinkle crushed chips and shredded cheddar and Monterey jack cheeses on top.  Cook for about 15 more minutes or until cheese is melted','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,90,'Serve with sour cream, additional salsa, black olives or whatever you think goes good with tacos!','DIR',pDirectionID);
+call Recipe_SaveIngredient(0,pRecipeID,'cream cheese',4,'oz','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'green onions',3,'','chopped','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'ground beef',1,'lbs','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'large pasta shells',12,'','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Monterey jack cheese',1,'cup','shredded','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salsa',1,'cup','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'sour cream',1,'cup','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'taco sauce',1,'cup','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'taco seasoning',1,'package','','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'tortilla chips',1.5,'cup','crushed','ING',10,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'In a fry pan cook ground beef and add taco seasoning','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Add cream cheese cover and simmer until cheese is melted. Blend well.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Set aside and allow to fully cool.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'While burger is cooking cook the pasta shells, drain and toss well with butter.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Pour salsa in the bottom of a 9 x 13 inch baking dish.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Stuff each shell with the meat mixture. Place the stuffed shells in the baking dish and cover the tops of the shells with taco sauce.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Cover and bake in the oven at 350 degrees for 30 minutes.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'After 30 minutes, uncover, and sprinkle crushed chips and shredded cheddar and Monterey jack cheeses on top.  Cook for about 15 more minutes or until cheese is melted','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,8,'Serve with sour cream, additional salsa, black olives or whatever you think goes good with tacos!','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'MEAT');
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
+call Recipe_SaveRecipe('Thai Lentil Patty','Notes:
+Lentil patties may dry out if you cook them for a long.
+You can store half cooked patties or cooked patties in refrigerator and even freeze them for a month.',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'lentils',1,'cup','pre-soaked','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'garlic',3,'cloves','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'red onions',0.5,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Spinach',2,'handfulls','big handfulls','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'serrano pepper',2,'','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Thai chili pepper',2,'','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'ginger',1,'inch','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'bread crumbs',1,'cup','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'red curry paste',2,'tsp','Adjust to taste','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'lemon juice',1,'','Juice from one lemon','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Salt',0,'','to taste','ING',10,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Beet',1,'large','or 2 small','ING',11,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Process the lentils, veggies, herbs and spices in a food processor until grainy and well combined.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Preheat oven to 350 F.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Grease your palm and make patties out of the lentil veggie mixture.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Once all the patties are ready, place them on a baking sheet.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Spray or brush with oil.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'Bake for 10-15 minutes until the patties are uniformly cooked.(flip them after 5 minutes of cooking for both the sides to cook uniformly)','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Allow these to cool on a cooling rack.','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+call Recipe_SaveImage(pRecipeID,'SPMVRL2017071707493249.png','False','0');
+call Recipe_SaveImage(pRecipeID,'JELRCA2017071707493649.png','False','1');
 
 
 call Recipe_SaveRecipe('Toffee','',0,pRecipeID);
@@ -1418,6 +1616,29 @@ call Recipe_SaveDirections(0,pRecipeID,80,'Sprinkle chocolate over hot toffee. L
 call Recipe_SaveDirections(0,pRecipeID,90,'Sprinkle with reserved nuts, pressing lightly into chocolate. When cool break into pieces.','DIR',pDirectionID);
 
 
+call Recipe_SaveRecipe('Ultimate Unbaked Brownies','http://chocolatecoveredkatie.com/2016/03/07/the-ultimate-unbaked-brownies-raw-vegan/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'Brownies',0,'','','HDR',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'pitted dates',2.5,'cups','loosely packed','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'walnuts',1.5,'cups','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cocoa powder',6,'tbsp','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',1.5,'tsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'water',2,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.125,'tsp','1/4 - 1/8 tsp','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'Topping',0,'','','HDR',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'cocoa powder',0.25,'cup','','ING',8,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'maple syrup',0.25,'cup','','ING',9,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vegetable or melted coconut oil',2,'tbsp','','ING',10,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'pure vanilla extract',0.5,'tsp','','ING',11,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'Brownies','HDR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Combine the dates, walnuts, 6 tbsp cocoa, 1 1/2 tsp vanilla, water, and salt in a food processor. Process until completely smooth, scraping down as needed – It may seem dry at first, but don’t add any extra water.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'Lightly grease an 8-inch square baking pan, or line the pan with parchment or wax paper.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Transfer dough to pan and press very firmly until dough is evenly distributed in the pan.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'Topping','HDR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'In a medium mixing bowl, combine remaining cocoa and vanilla extract with the maple syrup and oil. Stir until mixture forms a paste.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Spread evenly over dough in the baking pan. Refrigerate brownies for at least 2 hours, to set.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'Leftovers can stay covered at room temperature for a day, or up to 2 weeks in the fridge, or 1-2 months in the freezer.','DIR',pDirectionID);
+
+
 call Recipe_SaveRecipe('Vegan Cheese Sticks','Great to make for parties to enjoy with friends or all by yourself. Cholesterol free!',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'Daiya Shreds',2,'cups','','ING',0,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'breadcrumbs',1.5,'cups','','ING',1,pIngredientID);
@@ -1433,7 +1654,8 @@ call Recipe_SaveDirections(0,pRecipeID,2,'Line a bread pan with parchment paper 
 call Recipe_SaveDirections(0,pRecipeID,3,'Carefully pull flattened cheese from pan and slice them in 10 to 12 sticks, about the width of a finger.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,4,'Pour breadcrumbs in bowl. Add remainder of garlic powder mixture from step 1 to bowl. Whisk together. Pour soy milk in separate bowl. Pour flour in separate bowl.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,5,'Pour canola oil into medium saucepan so it''s about 2 or 3 inches deep. Put it on a medium heat and let it warm up.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,6,'Dunk cheese stick in egg replacer mix, dredge it in the flour, dunk it back in the egg replacer mix and roll it in the breadcrumbs. Repeat for all the cheese sticks. Carefully place them in hot oil to fry. Once golden brown, take them out with a pair of tongs and set on a paper towel.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Dunk cheese stick in egg replacer mix, dredge it in the flour, dunk it back in the egg replacer mix and roll it in the breadcrumbs. Repeat for all the cheese sticks. Carefully place them in hot oil to fry. Once golden brown, take them out with a pair of tongs and set on a paper towel.
+DEEP FRYER: 375 FOR 45 SECONDS','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,7,'Serve with sauce of choice.','DIR',pDirectionID);
 call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
@@ -1471,6 +1693,29 @@ call Recipe_SaveDirections(0,pRecipeID,1,'Heat a lightly oiled griddle over medi
 call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
 
 
+call Recipe_SaveRecipe('Vegan-Vanilla, rainbow cupcakes','http://www.milissweets.com/2015/04/25/vegan-rainbow-cupcakes/',0,pRecipeID);
+call Recipe_SaveIngredient(0,pRecipeID,'coconut milk',1.5,'cup','','ING',0,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'white vinegar',1,'tbsp','','ING',1,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'all purpose flour',2,'cup','','ING',2,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'granulated sugar',1,'cup','','ING',3,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'baking powder',2,'tsp','','ING',4,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'baking soda',1,'tsp','','ING',5,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'salt',0.5,'tsp','','ING',6,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'vanilla extract',2,'tsp','','ING',7,pIngredientID);
+call Recipe_SaveIngredient(0,pRecipeID,'canola oil',0.5,'cup','','ING',8,pIngredientID);
+call Recipe_SaveDirections(0,pRecipeID,0,'In a measuring cup, place 1 tablespoon of white vinegar. Next, pour the coconut milk to the one and one half cup line of the measuring cup.  (Please note that this recipe also works very well with soy milk.) Allow to stand for 5 minutes. This will allow the milk to thicken and curdle.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,1,'Next add the canola oil and pure vanilla extract, to the measuring cup with the milk and vinegar mixture.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,2,'In a mixing bowl, add all of the dry ingredients, including the all purpose flour, sugar, baking powder, baking soda and salt.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,3,'Pour the wet ingredients onto the dry and mix until there are no more lumps. I use a scraping attachment of my standing mixer to achieve a smooth batter.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,4,'If you are just making Vegan Vanilla cake or cupcakes, you can stop here. If you want to make a rainbow, we have to add a few steps.','HDR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,5,'The easiest and best way to make a rainbow is to measure all of the wet ingredients into separate batches, using separate measuring cups. To make a rainbow, I lined up 6 mason jars. If you are making a small batch, I recommend only making 3 recipes so that you can split each batter up and color them. This should yield about 18 cupcakes. If you need to make a larger number of desserts, I recommend making six total batches and coloring them separately.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,6,'Once the batter is smooth, add the food coloring. To make a rainbow, you need red, orange, yellow, green, blue and purple. My kids supervised the whole project, to be sure I was accurate. I use gels and squirt them in. I’m guessing it’s about a 1/2 teaspoon per batch. You can add more, depending on how vibrant you want to colors of the cake to be. I place each colored batch into gallon-sized ziplock bags.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,7,'Preheat your oven to 350 degrees.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,8,'When your cupcake tins are lined with paper cups, it’s time to get to work. Cut a very small hole at one corner of the first bag of batter and pipe in a small amount to cover the bottom. Go up from there until you have purple. It’s important that you hit the edge of the paper with the batter, for the best result. The most beautiful part of the cupcake is the rainbow line that can be seen on the wrapper. You will want as little batter of each color as possible per cupcake. You’ll end up with very full cups, no matter how hard you try for them to be the typical 2/3 up. It’s OK and it will all work out in the end.','DIR',pDirectionID);
+call Recipe_SaveDirections(0,pRecipeID,9,'Place in the oven for 16-18 minutes, or until the center of the front cupcakes test dry. Allow to cool before frosting. I used gold, edible luster dust as the finishing touch to this cupcake. My kids can’t wait for me to make them again!','DIR',pDirectionID);
+call Recipe_SaveRecipeCategory(pRecipeID,'VEGAN');
+
+
 call Recipe_SaveRecipe('White Chocolate Chip and Toasted Pecan Butterscotch Blondies','',0,pRecipeID);
 call Recipe_SaveIngredient(0,pRecipeID,'baking powder',0.5,'tsp','','ING',0,pIngredientID);
 call Recipe_SaveIngredient(0,pRecipeID,'butter',0.3333,'cup','unsalted, melted and cooled slightly','ING',0,pIngredientID);
@@ -1486,19 +1731,6 @@ call Recipe_SaveDirections(0,pRecipeID,20,'In a small bowl, whisk together the f
 call Recipe_SaveDirections(0,pRecipeID,30,'In a larger mixing bowl, cream together the melted butter, brown sugar and vanilla until lightened in color, then add in the egg and mix well.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,40,'Stir in the flour mixture, then add in the pecans and white chocolate chips.','DIR',pDirectionID);
 call Recipe_SaveDirections(0,pRecipeID,50,'Scrape the batter into the prepared pan and bake until just set and golden brown on top, 15-20 minutes.','DIR',pDirectionID);
-
-
-call Recipe_SaveRecipe('White Sauce','',0,pRecipeID);
-call Recipe_SaveIngredient(0,pRecipeID,'butter',1,'tbsp','melted','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'cayenne pepper',0,'dash','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'garlic powder',0.5,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'mayonnaise',1.25,'cup','Use real mayo (Hellmann''s for example)','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'paprika',0.25,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'sugar',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'tomato paste',1,'tsp','','ING',0,pIngredientID);
-call Recipe_SaveIngredient(0,pRecipeID,'water',0.25,'cup','warm','ING',0,pIngredientID);
-call Recipe_SaveDirections(0,pRecipeID,10,'Using a fork or a whisk, blend all ingredients together thoroughly until well mixed and the sauce is smooth. Refrigerate overnight to allow flavors to blend. Bring to room temperature before serving.','DIR',pDirectionID);
-call Recipe_SaveDirections(0,pRecipeID,20,'The sauce will NOT taste right if you don''t let it sit overnight.','DIR',pDirectionID);
 
 
 call Recipe_SaveRecipe('Whole-Wheat Banana Nut Bread','',0,pRecipeID);
