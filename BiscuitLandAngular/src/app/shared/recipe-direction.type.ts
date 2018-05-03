@@ -1,11 +1,11 @@
 import { RecipeDisplayType } from './recipe-display-type.type';
 
 export class RecipeDirection {
-  directionID: number;
-  recipeID: string;
-  sortOrder: number;
-  directionText: string;
-  displayType: RecipeDisplayType;
+  DirectionID: number;
+  RecipeID: string;
+  SortOrder: number;
+  DirectionText: string;
+  DisplayType: RecipeDisplayType;
 
   constructor() { }
 }

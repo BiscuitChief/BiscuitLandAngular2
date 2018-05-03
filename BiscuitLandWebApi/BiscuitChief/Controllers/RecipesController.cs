@@ -42,7 +42,7 @@ namespace BiscuitChief.Controllers
         }
 
         [Route("api/recipes/search")]
-        [HttpGet]
+        [HttpPost]
         public IHttpActionResult Search(Models.RecipeSearch searchdata)
         {
             try

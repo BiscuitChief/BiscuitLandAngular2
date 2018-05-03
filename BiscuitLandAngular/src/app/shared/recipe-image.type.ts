@@ -1,13 +1,13 @@
 export class RecipeImage {
-  recipeID: string;
-  imageName: string;
-  sortOrder: number;
-  isPrimary: boolean;
-  isTemp: boolean;
-  path_TempThumbnail: string;
-  path_TempStandard: string;
-  path_Thumbnail: string;
-  path_Standard: string;
+  RecipeID: string;
+  ImageName: string;
+  SortOrder: number;
+  IsPrimary: boolean;
+  IsTemp: boolean;
+  Path_TempThumbnail: string;
+  Path_TempStandard: string;
+  Path_Thumbnail: string;
+  Path_Standard: string;
 
   constructor() { }
 }

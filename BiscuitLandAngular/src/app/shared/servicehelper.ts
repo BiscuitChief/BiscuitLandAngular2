@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { environment } from '../../environments/environment';
+import { HttpHeaderResponse } from '@angular/common/http/src/response';
 
 export class ServiceHelper {
 
@@ -15,6 +16,10 @@ export class ServiceHelper {
       'Authorization': 'my-auth-token'
     })
   };
+
+  static headers: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'my-auth-token'});
 
   static API_URL = environment.apiUrl;
 

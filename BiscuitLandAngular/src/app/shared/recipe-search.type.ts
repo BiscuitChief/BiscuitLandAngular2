@@ -2,14 +2,14 @@ import { RecipeCategory } from './recipe-category.type';
 import { Recipe } from './recipe.type';
 
 export class RecipeSearch {
-  searchText: string;
-  searchIngredientList: string[];
-  searchCategoryList: RecipeCategory[];
-  searchResults: Recipe[];
-  searchResultText: string;
-  pageSize: number;
-  pageNumber: number;
-  pageCount: number;
+  SearchText: string = '';
+  SearchIngredientList: string[];
+  SearchCategoryList: RecipeCategory[];
+  SearchResults: Recipe[];
+  SearchResultText: string;
+  PageSize: number;
+  PageNumber: number;
+  PageCount: number;
 
   constructor() { }
 }

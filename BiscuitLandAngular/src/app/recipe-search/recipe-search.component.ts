@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { RecipeService } from '../services/recipe.service';
+
+import { RecipeSearch } from '../shared/recipe-search.type';
+
 
 @Component({
   selector: 'app-recipe-search',
@@ -7,9 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeSearchComponent implements OnInit {
 
-  constructor() { }
+  recipeSearch: RecipeSearch = new RecipeSearch();
+  errMsg: string;
+  return: string = '';
+  canEdit: boolean = false;
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.initializeForm();
+  }
+
+  private initializeForm() {
+    this.recipeService.canUserEditRecipes()
+      .subscribe(data => this.canEdit = data,
+      errMsg => this.errMsg = <any>errMsg);
+
+    this.recipeService.getAllCategories()
+      .subscribe(data => this.recipeSearch.SearchCategoryList = data,
+      errMsg => this.errMsg = <any>errMsg);
+  }
+
+  SearchRecipes() {
+    this.recipeSearch.SearchResultText = "Test";
   }
 
 }

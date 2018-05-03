@@ -11,6 +11,7 @@ import { NavitemService } from './services/navitem.service';
 import { LoginService } from './services/login.service';
 import { ContactService } from './services/contact.service';
 import { DatabaseScriptsService } from './services/database-scripts.service';
+import { RecipeService } from './services/recipe.service';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
@@ -53,7 +54,8 @@ import { RecipeComponent } from './recipe/recipe.component';
     NavitemService,
     LoginService,
     ContactService,
-    DatabaseScriptsService
+    DatabaseScriptsService,
+    RecipeService
   ],
   bootstrap: [AppComponent]
 })

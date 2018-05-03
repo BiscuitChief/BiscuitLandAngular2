@@ -4,14 +4,14 @@ import { RecipeDirection } from './recipe-direction.type';
 import { RecipeCategory } from './recipe-category.type';
 
 export class Recipe {
-  recipeID: string;
-  title: string;
-  description: string;
-  quantity: number;
-  ingredientList: RecipeIngredient[];
-  directionList: RecipeDirection[];
-  categoryList: RecipeCategory[];
-  imageList: RecipeImage[];
+  RecipeID: string;
+  Title: string;
+  Description: string;
+  Quantity: number;
+  IngredientList: RecipeIngredient[];
+  DirectionList: RecipeDirection[];
+  CategoryList: RecipeCategory[];
+  ImageList: RecipeImage[];
 
   constructor() { }
 }

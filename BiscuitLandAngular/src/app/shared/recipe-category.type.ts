@@ -1,7 +1,7 @@
 export class RecipeCategory {
-  categoryCode: string;
-  categoryName: string;
-  isSelected: boolean;
+  CategoryCode: string;
+  CategoryName: string;
+  IsSelected: boolean;
 
   constructor() {
 

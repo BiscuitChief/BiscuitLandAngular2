@@ -1,3 +1,31 @@
-<p>
-  recipe-search works!
-</p>
+
+<div class="PageTitle">
+  Find a Recipe
+
+  <span *ngIf="canEdit" style="font-weight:normal; font-size:12px; padding-left:20px;">
+    <a routerLink="/recipes/create">&lt; Create New &gt;</a>
+  </span>
+</div>
+
+{{ recipeSearch | json }}
+
+<form novalidate #searchForm="ngForm">
+
+  <ul class="InputRow">
+    <li class="InputLabel">Search Text:</li>
+    <li class="InputField"><input type="text" class="form-control" [(ngModel)]="recipeSearch.SearchText" name="SearchText"></li>
+  </ul>
+  <div *ngIf="recipeSearch.SearchCategoryList">
+    <span *ngFor="let category of recipeSearch.SearchCategoryList" style="padding-right:15px; white-space:nowrap;">
+      {{category.CategoryName}} <input type="checkbox" [name]="category.CategoryCode" checked="checked" [(ngModel)]="category.IsSelected" />
+    </span>
+  </div>
+  <br />
+  <input type="button" class="BtnSubmit" value="Search" (click)="SearchRecipes()" />
+  <br /><br />
+  <div id="SearchResults">
+    <div id="SearchResultsHeading">
+      {{recipeSearch.SearchResultText}}
+    </div>
+  </div>
+</form>
