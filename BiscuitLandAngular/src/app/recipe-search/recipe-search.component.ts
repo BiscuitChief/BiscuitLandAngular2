@@ -35,7 +35,13 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   SearchRecipes() {
-    this.recipeSearch.SearchResultText = "Test";
+    this.recipeService.search(this.recipeSearch)
+      .subscribe(data => this.ProcessResults(data),
+      errMsg => this.errMsg = <any>errMsg);
+  }
+
+  private ProcessResults(data: RecipeSearch) {
+    this.recipeSearch = data;
   }
 
 }

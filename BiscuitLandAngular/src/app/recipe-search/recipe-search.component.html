@@ -22,6 +22,9 @@
   </div>
   <br />
   <input type="button" class="BtnSubmit" value="Search" (click)="SearchRecipes()" />
+  <div *ngIf="errMsg" class="ErrorMsg">
+    {{errMsg}}
+  </div>
   <br /><br />
   <div id="SearchResults">
     <div id="SearchResultsHeading">
