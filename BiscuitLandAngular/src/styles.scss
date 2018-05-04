@@ -52,6 +52,7 @@ textarea.ng-dirty.ng-invalid.ng-touched {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: #FFFFFF;
+  clear:both;
 }
 
 .PageFooterText {
@@ -241,11 +242,17 @@ textarea.ng-dirty.ng-invalid.ng-touched {
   counter-increment: dircounter;
 }
 
+.Pager {
+  clear:both;
+}
+
 .Pager .Selector {
-  display: inline;
+  display: block;
+  float:left;
   padding: 2px 4px 2px 4px;
   border: 2px solid #4800ff;
   background-color: #EEEEEE;
+  margin-right:5px;
 }
 
 .Pager .Selector:hover {

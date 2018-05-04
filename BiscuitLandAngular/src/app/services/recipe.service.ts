@@ -37,4 +37,11 @@ export class RecipeService {
       .map(rsp => rsp as RecipeSearch)
       .catch(ServiceHelper.handleError);
   }
+
+  getRecipe(recipeId: string, quantity: number = 1): Observable<Recipe> {
+    return this.http
+      .get(ServiceHelper.API_URL + 'api/recipes/recipe/' + recipeId + "?quantity=" + quantity)
+      .map(rsp => rsp as Recipe)
+      .catch(ServiceHelper.handleError);
+  }
 }

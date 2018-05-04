@@ -7,8 +7,6 @@
   </span>
 </div>
 
-{{ recipeSearch | json }}
-
 <form novalidate #searchForm="ngForm">
 
   <ul class="InputRow">
@@ -21,14 +19,36 @@
     </span>
   </div>
   <br />
-  <input type="button" class="BtnSubmit" value="Search" (click)="SearchRecipes()" />
+  <div><input type="button" class="BtnSubmit" value="Search" (click)="SearchRecipes()" [disabled]="!recipeSearch.SearchCategoryList" /></div>
   <div *ngIf="errMsg" class="ErrorMsg">
     {{errMsg}}
   </div>
-  <br /><br />
+  <br />
   <div id="SearchResults">
     <div id="SearchResultsHeading">
       {{recipeSearch.SearchResultText}}
+    </div>
+
+    <div id="SearchItem" *ngFor="let recipe of recipeSearch.SearchResults">
+      <div id="SearchTitle" style="clear:both;" [routerLink]="['/recipes/recipe', recipe.RecipeID]">
+        {{recipe.Title}}
+        <div *ngIf="canEdit" style="font-weight:normal; font-size:12px; float:right;">
+          <a [routerLink]="['/recipes/create', recipe.RecipeID]">&lt; Edit &gt;</a>
+        </div>
+      </div>
+      <div id="SearchCategories" *ngIf="recipe.CategoryList?.length > 0">
+        <span *ngFor="let category of recipe.CategoryList" style="padding-right:10px;">{{category.CategoryName}}</span>
+      </div>
+      <div id="SearchDescription" *ngIf="recipe.Description">
+        {{recipe.Description}}
+      </div>
+    </div>
+    <div *ngIf="pageList?.length > 1" class="Pager" style="padding-top:10px;">
+      <div *ngIf="recipeSearch.PageNumber > 1" class="Selector" (click)="SelectPage(1)">&lt;&lt;</div>
+      <div *ngIf="recipeSearch.PageNumber > 1" class="Selector" (click)="SelectPage(recipeSearch.PageNumber - 1)">&lt;</div>
+      <div *ngFor="let page of pageList" class="Selector" [class.CurrentPage]="page == recipeSearch.PageNumber" (click)="SelectPage(page)">{{page}}</div>
+      <div *ngIf="recipeSearch.PageNumber < recipeSearch.PageCount" class="Selector" (click)="SelectPage(recipeSearch.PageNumber + 1)">&gt;</div>
+      <div *ngIf="recipeSearch.PageNumber < recipeSearch.PageCount" class="Selector" (click)="SelectPage(recipeSearch.PageCount)">&gt;&gt;</div>
     </div>
   </div>
 </form>

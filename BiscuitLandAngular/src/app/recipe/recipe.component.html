@@ -1,3 +1,29 @@
-<p>
-  recipe works!
-</p>
+<div class="RecipeHeading">
+  <div class="Title">
+    {{recipe.Title}}
+    <span *ngIf="canEdit" style="font-weight:normal; font-size:12px; padding-left:20px;">
+      <a [routerLink]="['/recipes/create/',recipe.RecipeID]">&lt; Edit &gt;</a>
+    </span>
+  </div>
+  <div class="CategoryList" *ngIf="recipe.CategoryList?.length > 0">
+    <span *ngFor="let category of recipe.CategoryList" style="padding-right:10px;">{{category.CategoryName}}</span>
+  </div>
+  <div class="Description" *ngIf="recipe.Description">
+    {{recipe.Description}}
+  </div>
+  <div *ngIf="recipe.ImageList?.length > 0">
+    <div style="clear:both;"></div>
+    <div class="ImageThumbnail" *ngFor="let image of recipe.ImageList; let i = index">
+      <img src='image.Path_Thumbnail + image.ImageName' (click)="ShowImage(i);" />
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+<b>Quantity:</b>
+<br /><br />
+<b>Ingredients:</b>
+<br />
+<b>Directions:</b>
+<div *ngIf="errMsg" class="ErrorMsg">
+  {{errMsg}}
+</div>

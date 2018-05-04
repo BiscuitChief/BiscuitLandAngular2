@@ -74,5 +74,20 @@ namespace BiscuitChief.Controllers
                 return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
             }
         }
+
+        [Route("api/recipes/recipe/{recipeId}")]
+        [HttpGet]
+        public IHttpActionResult GetRecipe(string recipeId, int quantity = 1)
+        {
+            try
+            {
+                return Ok(new Recipe(recipeId, quantity));
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
     }
 }

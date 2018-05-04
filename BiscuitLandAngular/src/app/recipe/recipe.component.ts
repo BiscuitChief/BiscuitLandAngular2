@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Params, ActivatedRoute } from '@angular/router';
+
+import { RecipeService } from '../services/recipe.service';
+
+import { Recipe } from '../shared/recipe.type';
 
 @Component({
   selector: 'app-recipe',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeComponent implements OnInit {
 
-  constructor() { }
+  recipe: Recipe = new Recipe();
+  canEdit: boolean = false;
+  errMsg: string;
+
+  constructor(private recipeService: RecipeService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.loadRecipe();
+  }
+
+  loadRecipe() {
+    this.recipeService.canUserEditRecipes()
+      .subscribe(data => this.canEdit = data,
+      errMsg => this.errMsg = <any>errMsg);
+
+    var recipeId = this.activatedRoute.snapshot.params['recipeid'] as string
+
+    this.recipeService.getRecipe(recipeId)
+      .subscribe(data => this.recipe = data,
+      errMsg => this.errMsg = <any>errMsg);
+  }
+
+  ShowImage(index: number) {
   }
 
 }
