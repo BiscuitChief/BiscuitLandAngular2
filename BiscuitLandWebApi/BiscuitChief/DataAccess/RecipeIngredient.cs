@@ -105,7 +105,7 @@ namespace BiscuitChief.Models
             this.UnitOfMeasure = dr["UnitOfMeasure"].ToString().Trim();
             this.Notes = dr["Notes"].ToString().Trim();
             this.SortOrder = Convert.ToInt32(dr["SortOrder"]);
-            this.DisplayType = (Recipe.DisplayTypeCodes)(Enum.Parse(typeof(Recipe.DisplayTypeCodes), dr["DisplayType"].ToString()));
+            this.DisplayType = dr["DisplayType"].ToString();
         }
 
         #endregion

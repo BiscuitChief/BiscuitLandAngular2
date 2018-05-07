@@ -4,6 +4,7 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../services/recipe.service';
 
 import { Recipe } from '../shared/recipe.type';
+import { Path_Thumbnail, Path_Standard } from '../shared/recipe-image.type';
 
 @Component({
   selector: 'app-recipe',
@@ -15,6 +16,8 @@ export class RecipeComponent implements OnInit {
   recipe: Recipe = new Recipe();
   canEdit: boolean = false;
   errMsg: string;
+  pathThumbnail: string = Path_Thumbnail;
+  pathStandard: string = Path_Standard;
 
   constructor(private recipeService: RecipeService,
     private activatedRoute: ActivatedRoute) { }
@@ -34,6 +37,12 @@ export class RecipeComponent implements OnInit {
       .subscribe(data => this.recipe = data,
       errMsg => this.errMsg = <any>errMsg);
   }
+
+  updateQuantity() {
+    this.recipeService.getRecipe(this.recipe.RecipeID, this.recipe.Quantity)
+      .subscribe(data => this.recipe = data,
+      errMsg => this.errMsg = <any>errMsg);
+ }
 
   ShowImage(index: number) {
   }

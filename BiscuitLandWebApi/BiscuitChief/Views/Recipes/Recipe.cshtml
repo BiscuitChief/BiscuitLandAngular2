@@ -54,7 +54,7 @@
     <ul class="IngredientsList">
         @foreach (BiscuitChief.Models.RecipeIngredient item in Model.IngredientList)
         {
-            if (item.DisplayType == BiscuitChief.Models.Recipe.DisplayTypeCodes.HDR)
+            if (item.DisplayType == "HDR")
             {
                 <li class="Header">
                     @item.IngredientName
@@ -77,7 +77,7 @@
     <ul class="DirectionsList">
         @foreach (BiscuitChief.Models.RecipeDirection item in Model.DirectionList)
         {
-            if (item.DisplayType == BiscuitChief.Models.Recipe.DisplayTypeCodes.HDR)
+            if (item.DisplayType == "HDR")
             {
                 <li class="Header">
                     @item.DirectionText

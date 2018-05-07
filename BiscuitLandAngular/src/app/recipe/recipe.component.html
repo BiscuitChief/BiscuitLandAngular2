@@ -14,16 +14,48 @@
   <div *ngIf="recipe.ImageList?.length > 0">
     <div style="clear:both;"></div>
     <div class="ImageThumbnail" *ngFor="let image of recipe.ImageList; let i = index">
-      <img src='image.Path_Thumbnail + image.ImageName' (click)="ShowImage(i);" />
+      <img [src]="pathThumbnail + image.ImageName" (click)="ShowImage(i);" style="cursor:pointer;" />
     </div>
     <div style="clear:both;"></div>
   </div>
 </div>
 <b>Quantity:</b>
+<select [(ngModel)]="recipe.Quantity" (change)="updateQuantity()">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+</select>
 <br /><br />
-<b>Ingredients:</b>
-<br />
-<b>Directions:</b>
+<div *ngIf="recipe.IngredientList?.length > 0">
+  <b>Ingredients:</b>
+  <ul class="IngredientsList">
+    <li *ngFor="let ing of recipe.IngredientList" [class.Header]="ing.DisplayType == 'HDR'" [class.Ingredient]="ing.DisplayType == 'ING'">
+      <span *ngIf="ing.DisplayType == 'HDR'">{{ing.IngredientName}}</span>
+      <span *ngIf="ing.DisplayType == 'ING'">
+        {{ing.DisplayQuantity}} {{ing.UnitOfMeasure}}
+        {{ing.IngredientName}}
+        <span *ngIf="ing.Notes">
+          : {{ing.Notes}}
+        </span>
+      </span>
+    </li>
+  </ul>
+  <br />
+</div>
+<div *ngIf="recipe.DirectionList?.length > 0">
+  <b>Directions:</b>
+  <ul class="DirectionsList">
+    <li *ngFor="let dir of recipe.DirectionList" [class.Header]="dir.DisplayType == 'HDR'" [class.Direction]="dir.DisplayType == 'DIR'">
+      {{dir.DirectionText}}
+    </li>
+  </ul>
+</div>
 <div *ngIf="errMsg" class="ErrorMsg">
   {{errMsg}}
 </div>

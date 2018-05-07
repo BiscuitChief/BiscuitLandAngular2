@@ -30,7 +30,7 @@ namespace BiscuitChief.Models
 
         [Display(Name = "Display Type:")]
         [Required(ErrorMessage = "Please enter a Display Type")]
-        public Recipe.DisplayTypeCodes DisplayType { get; set; }
+        public string DisplayType { get; set; }
 
         [Display(Name = "Notes:")]
         public string Notes { get; set; }

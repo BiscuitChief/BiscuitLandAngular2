@@ -35,15 +35,16 @@ namespace BiscuitChief.Models
         #region Private Properties
         #endregion
 
-        public enum DisplayTypeCodes
-        {
-            [Display(Name = "Ingredient")]
-            ING,
-            [Display(Name = "Direction")]
-            DIR,
-            [Display(Name = "Header")]
-            HDR 
-        }
+        //Not using anymore, can't easily convert to a string for JSON responses from Web Api calls
+        //public enum DisplayTypeCodes
+        //{
+        //    [Display(Name = "Ingredient")]
+        //    ING,
+        //    [Display(Name = "Direction")]
+        //    DIR,
+        //    [Display(Name = "Header")]
+        //    HDR 
+        //}
 
         public partial class Category
         {
