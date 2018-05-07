@@ -48,6 +48,12 @@ export class NavMenuComponent implements OnInit {
       this.pageTitle = "Login";
     } else if (this.router.url == "/recipes/search") {
       this.pageTitle = "Search Recipes";
+    } else if (this.router.url.startsWith("/recipes/recipe/")) {
+      this.pageTitle = "Recipe Details";
+    } else if (this.router.url == "/recipes/create") {
+      this.pageTitle = "New Recipe";
+    } else if (this.router.url.startsWith("/recipes/create/")) {
+      this.pageTitle = "Edit Recipe";
     } else if (this.router.url == "/manageusers") {
       this.pageTitle = "Manage Users";
     } else {
