@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { RecipeService } from '../services/recipe.service';
 
@@ -18,9 +19,11 @@ export class RecipeComponent implements OnInit {
   errMsg: string;
   pathThumbnail: string = Path_Thumbnail;
   pathStandard: string = Path_Standard;
+  currentImageIndex: number = -1;
 
   constructor(private recipeService: RecipeService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.loadRecipe();
@@ -44,7 +47,33 @@ export class RecipeComponent implements OnInit {
       errMsg => this.errMsg = <any>errMsg);
  }
 
-  ShowImage(index: number) {
+  ShowImage(index: number, content) {
+    this.ChangeImage(index);
+    this.modalService.open(content, { size: 'lg', centered: true, });
   }
 
+  ChangeImage(index) {
+    if (index > this.recipe.ImageList.length - 1) {
+      index = 0;
+    }
+    this.currentImageIndex = index;
+  }
+
+  //open(content) {
+  //  this.modalService.open(content).result.then((result) => {
+  //    this.closeResult = `Closed with: ${result}`;
+  //  }, (reason) => {
+  //    this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  //  });
+  //}
+
+  //private getDismissReason(reason: any): string {
+  //  if (reason === ModalDismissReasons.ESC) {
+  //    return 'by pressing ESC';
+  //  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //    return 'by clicking on a backdrop';
+  //  } else {
+  //    return `with: ${reason}`;
+  //  }
+  //}
 }

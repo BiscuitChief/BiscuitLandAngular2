@@ -1,3 +1,4 @@
+@import "~bootstrap/dist/css/bootstrap.css" ;
 
 body {
   padding-top: 50px;
@@ -317,7 +318,6 @@ textarea.ng-dirty.ng-invalid.ng-touched {
 }
 
 .ImageStandard {
-  width: 800px !important;
   text-align: center;
   pointer-events: none;
 }
