@@ -5,7 +5,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { RecipeService } from '../services/recipe.service';
 
 import { Recipe } from '../shared/recipe.type';
-import { Path_Thumbnail, Path_Standard } from '../shared/recipe-image.type';
 
 @Component({
   selector: 'app-recipe',
@@ -17,8 +16,6 @@ export class RecipeComponent implements OnInit {
   recipe: Recipe = new Recipe();
   canEdit: boolean = false;
   errMsg: string;
-  pathThumbnail: string = Path_Thumbnail;
-  pathStandard: string = Path_Standard;
   currentImageIndex: number = -1;
 
   constructor(private recipeService: RecipeService,

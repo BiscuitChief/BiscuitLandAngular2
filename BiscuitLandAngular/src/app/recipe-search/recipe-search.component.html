@@ -7,7 +7,7 @@
   </span>
 </div>
 
-<form novalidate #searchForm="ngForm">
+<form novalidate #searchForm="ngForm" (ngSubmit)="SearchRecipes()">
 
   <ul class="InputRow">
     <li class="InputLabel">Search Text:</li>
@@ -19,7 +19,7 @@
     </span>
   </div>
   <br />
-  <div><input type="button" class="BtnSubmit" value="Search" (click)="SearchRecipes()" [disabled]="!recipeSearch.SearchCategoryList" /></div>
+  <div><input type="submit" class="BtnSubmit" value="Search" (click)="SearchRecipes()" [disabled]="!recipeSearch.SearchCategoryList" /></div>
   <div *ngIf="errMsg" class="ErrorMsg">
     {{errMsg}}
   </div>

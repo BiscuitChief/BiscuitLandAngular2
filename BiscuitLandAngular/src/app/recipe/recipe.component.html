@@ -14,7 +14,7 @@
   <div *ngIf="recipe.ImageList?.length > 0">
     <div style="clear:both;"></div>
     <div class="ImageThumbnail" *ngFor="let image of recipe.ImageList; let i = index">
-      <img [src]="pathThumbnail + image.ImageName" (click)="ShowImage(i, imageDisplay);" style="cursor:pointer;" />
+      <img [src]="image.ThumbnailPath" (click)="ShowImage(i, imageDisplay);" style="cursor:pointer;" />
     </div>
     <div style="clear:both;"></div>
   </div>
@@ -62,6 +62,6 @@
 
 <ng-template #imageDisplay>
   <div class="modal-body ImageStandard">
-    <img [src]="pathStandard + recipe.ImageList[currentImageIndex].ImageName" (click)="ChangeImage(currentImageIndex + 1);" style="cursor:pointer;" />
+    <img [src]="recipe.ImageList[currentImageIndex].StandardPath" (click)="ChangeImage(currentImageIndex + 1)" style="cursor:pointer;" />
   </div>
 </ng-template>

@@ -11,6 +11,7 @@ import { ServiceHelper } from '../shared/servicehelper';
 import { Recipe } from '../shared/recipe.type';
 import { RecipeSearch } from '../shared/recipe-search.type';
 import { RecipeCategory } from '../shared/recipe-category.type';
+import { RecipeImage } from '../shared/recipe-image.type';
 
 @Injectable()
 export class RecipeService {
@@ -41,7 +42,15 @@ export class RecipeService {
   getRecipe(recipeId: string, quantity: number = 1): Observable<Recipe> {
     return this.http
       .get(ServiceHelper.API_URL + 'api/recipes/recipe/' + recipeId + "?quantity=" + quantity)
-      .map(rsp => rsp as Recipe)
+      .map(rsp => this.LoadRecipe(rsp as Recipe))
       .catch(ServiceHelper.handleError);
+  }
+
+  private LoadRecipe(rsp: Recipe): Recipe {
+    for (let img of rsp.ImageList) {
+      RecipeImage.setImagePaths(img);
+    }
+
+    return rsp;
   }
 }

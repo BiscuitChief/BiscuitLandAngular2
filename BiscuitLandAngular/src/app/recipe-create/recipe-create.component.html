@@ -1,3 +1,105 @@
-<p>
-  recipe-create works!
-</p>
+<form novalidate #recipeForm="ngForm">
+  <div class="RecipeHeading">
+    <div class="Title">
+      {{pageHeading}}
+      <div *ngIf="recipe.RecipeID" style="float:right; font-weight:normal; font-size:12px;">
+        <a href='#'>&lt; Delete Recipe &gt;</a>
+      </div>
+    </div>
+  </div>
+  <div class="InputForm">
+    <div class="SectionHeading">
+      Recipe Details
+    </div>
+    <ul class="FormFields">
+      <li>
+        <label>Title:</label>
+        <input id="Title" name="Title" [(ngModel)]="recipe.Title" #title="ngModel" required />
+      </li>
+      <li>
+        <label>Description:</label>
+        <textarea id="Description" name="Description" [(ngModel)]="recipe.Description" #title="ngModel" required
+                  rows="3"
+                  style="width:600px; max-width: 100%;" ></textarea>
+      </li>
+      <li>
+        <label>Categories:</label>
+        <span *ngFor="let category of recipe.CategoryList" style="padding-right:15px; white-space:nowrap;">
+          {{category.CategoryName}} <input type="checkbox" [name]="category.CategoryCode" checked="checked" [(ngModel)]="category.IsSelected" />
+        </span>
+      </li>
+      <li>
+        <label>Images:</label>
+        <input type="file" id="NewImage" accept=".jpg,.jpeg,.png" />
+        <span id="UploadResult"></span>
+        <div *ngIf="recipe.ImageList?.length > 0">
+          <div style="clear:both;"></div>
+          <div *ngFor="let image of recipe.ImageList; let i = index" class="ImageEditor">
+            <div class="ImageThumbnail">
+              <img [src]="image.ThumbnailPath" (click)="ShowImage(i, imageDisplay);" style="cursor:pointer;" />
+            </div>
+            <div class="ImageControls">
+              <div style="display:inline-block; width:30px; margin-left:1px; text-align:left;">
+                <a *ngIf="i > 0" id="Image_MovePrevious" style="cursor:pointer;" (click)="Image_MovePrevious(i)">&#9668;</a>
+              </div>
+              <a id="Image_Delete" style="cursor:pointer; color:#FF0000;" (click)="Image_Delete(i)">X</a>
+              <div style="display:inline-block; width:30px; text-align:right; font-size:0px;">
+                <a *ngIf="i < recipe.ImageList.length - 1" id="Image_MoveNext" style="cursor:pointer; font-size:14px;" (click)="Image_MoveNext(i)">&#9658;</a>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="SectionHeading" style="clear:both;">
+      Ingredients
+    </div>
+    <div id="IngredientsForm" style="clear:both;">
+      <a id="Ingredient_AddNew" style="cursor:pointer;" (click)="Ingredient_AddNew()">&lt; Add New &gt;</a>
+      <div *ngFor="let ingredient of recipe.IngredientList; let i = index">
+        <div style="clear:both;"></div>
+        <ul class="FormFields" style="float:left;">
+          <li>
+            <label>Ingredient Name:</label>
+            <input id="IngredientName" name="IngredientName" [(ngModel)]="ingredient.IngredientName" #title="ngModel" required style="margin-right:30px;" />
+            <label>Display Type:</label>
+            <select id="DisplayType" name="DisplayType" [(ngModel)]="ingredient.DisplayType">
+              <option value="ING">Ingredient</option>
+              <option value="HDR">Header</option>
+            </select>
+          </li>
+          <li>
+            <label>Quantity:</label>
+            <input id="DisplayQuantity" name="DisplayQuantity" [(ngModel)]="ingredient.DisplayQuantity" #title="ngModel" style="margin-right:30px;" />
+            <label>Unit Of Measure:</label>
+            <input id="UnitOfMeasure" name="UnitOfMeasure" [(ngModel)]="ingredient.UnitOfMeasure" #title="ngModel" />
+          </li>
+          <li>
+            <label>Notes:</label>
+            <input id="Notes" name="Notes" [(ngModel)]="ingredient.Notes" #title="ngModel" style="width: 455px; max-width: 100%;" />
+          </li>
+        </ul>
+        <div style="float:right; width:100px; text-align:right;">
+        </div>
+        <div style="clear:both;"></div>
+        <hr *ngIf="i < recipe.IngredientList.length - 1"/>
+      </div>
+      <a *ngIf="recipe.IngredientList?.length > 0" id="Ingredient_AddNew" style="cursor:pointer;" (click)="Ingredient_AddNew()">&lt; Add New &gt;</a>
+    </div>
+
+    <div class="SectionHeading" style="clear:both;">
+      Directions
+    </div>
+    <div id="DirectionsForm" style="clear:both;">
+
+    </div>
+    </div>
+</form>
+
+<ng-template #imageDisplay>
+  <div class="modal-body ImageStandard">
+    <img [src]="recipe.ImageList[currentImageIndex].StandardPath" (click)="ChangeImage(currentImageIndex + 1);" style="cursor:pointer;" />
+  </div>
+</ng-template>
