@@ -1,4 +1,4 @@
-<form novalidate #recipeForm="ngForm">
+<form [formGroup]="recipeForm" novalidate (ngSubmit)="SubmitForm()">
   <div class="RecipeHeading">
     <div class="Title">
       {{pageHeading}}
@@ -14,18 +14,18 @@
     <ul class="FormFields">
       <li>
         <label>Title:</label>
-        <input id="Title" name="Title" [(ngModel)]="recipe.Title" #title="ngModel" required />
+        <input type="text" formControlName="Title" />
       </li>
       <li>
         <label>Description:</label>
-        <textarea id="Description" name="Description" [(ngModel)]="recipe.Description" #title="ngModel" required
+        <textarea formControlName="Description"
                   rows="3"
-                  style="width:600px; max-width: 100%;" ></textarea>
+                  style="width:600px; max-width: 100%;"></textarea>
       </li>
       <li>
         <label>Categories:</label>
         <span *ngFor="let category of recipe.CategoryList" style="padding-right:15px; white-space:nowrap;">
-          {{category.CategoryName}} <input type="checkbox" [name]="category.CategoryCode" checked="checked" [(ngModel)]="category.IsSelected" />
+          {{category.CategoryName}} <input type="checkbox" [name]="category.CategoryCode" [value]="category.CategoryCode" [checked]="category.IsSelected" (change)="CategoryChange(category.CategoryCode, $event.target.checked)" />
         </span>
       </li>
       <li>
@@ -40,11 +40,11 @@
             </div>
             <div class="ImageControls">
               <div style="display:inline-block; width:30px; margin-left:1px; text-align:left;">
-                <a *ngIf="i > 0" id="Image_MovePrevious" style="cursor:pointer;" (click)="Image_MovePrevious(i)">&#9668;</a>
+                <span *ngIf="i > 0" id="Image_MovePrevious" class="Link" (click)="Image_MovePrevious(i)">&#9668;</span>
               </div>
-              <a id="Image_Delete" style="cursor:pointer; color:#FF0000;" (click)="Image_Delete(i)">X</a>
-              <div style="display:inline-block; width:30px; text-align:right; font-size:0px;">
-                <a *ngIf="i < recipe.ImageList.length - 1" id="Image_MoveNext" style="cursor:pointer; font-size:14px;" (click)="Image_MoveNext(i)">&#9658;</a>
+              <span id="Image_Delete" style="cursor:pointer; color:#FF0000;" class="Link" (click)="Image_Delete(i)">X</span>
+              <div style="display:inline-block; width:30px; text-align:right;">
+                <span *ngIf="i < recipe.ImageList.length - 1" id="Image_MoveNext" class="Link" (click)="Image_MoveNext(i)">&#9658;</span>
               </div>
             </div>
           </div>
@@ -56,47 +56,88 @@
     <div class="SectionHeading" style="clear:both;">
       Ingredients
     </div>
-    <div id="IngredientsForm" style="clear:both;">
-      <a id="Ingredient_AddNew" style="cursor:pointer;" (click)="Ingredient_AddNew()">&lt; Add New &gt;</a>
-      <div *ngFor="let ingredient of recipe.IngredientList; let i = index">
+    <div id="IngredientsForm" formArrayName="IngredientList" style="clear:both;">
+      <span id="Ingredient_AddNew" class="Link" (click)="Ingredient_AddNew()">&lt; Add New &gt;</span>
+      <div *ngFor="let ingredient of recipeForm.get('IngredientList')['controls']; let i = index" [formGroupName]="i">
         <div style="clear:both;"></div>
+        <input type="hidden" formControlName="IngredientID" />
         <ul class="FormFields" style="float:left;">
           <li>
             <label>Ingredient Name:</label>
-            <input id="IngredientName" name="IngredientName" [(ngModel)]="ingredient.IngredientName" #title="ngModel" required style="margin-right:30px;" />
+            <input type="text" formControlName="IngredientName" style="margin-right:30px;" />
             <label>Display Type:</label>
-            <select id="DisplayType" name="DisplayType" [(ngModel)]="ingredient.DisplayType">
+            <select formControlName="DisplayType">
               <option value="ING">Ingredient</option>
               <option value="HDR">Header</option>
             </select>
           </li>
           <li>
             <label>Quantity:</label>
-            <input id="DisplayQuantity" name="DisplayQuantity" [(ngModel)]="ingredient.DisplayQuantity" #title="ngModel" style="margin-right:30px;" />
+            <input formControlName="DisplayQuantity" style="margin-right:30px;" />
             <label>Unit Of Measure:</label>
-            <input id="UnitOfMeasure" name="UnitOfMeasure" [(ngModel)]="ingredient.UnitOfMeasure" #title="ngModel" />
+            <input formControlName="UnitOfMeasure" />
           </li>
           <li>
             <label>Notes:</label>
-            <input id="Notes" name="Notes" [(ngModel)]="ingredient.Notes" #title="ngModel" style="width: 455px; max-width: 100%;" />
+            <input formControlName="Notes" style="width: 455px; max-width: 100%;" />
           </li>
         </ul>
         <div style="float:right; width:100px; text-align:right;">
+          <span *ngIf="i > 0" id="Ingredient_MovePrevious" class="Link" (click)="Ingredient_MovePrevious(i)">Move Up &#9650;</span>
+          <br />
+          <span *ngIf="i < recipeForm.get('IngredientList')['controls'].length - 1" id="Ingredient_MoveNext" class="Link" (click)="Ingredient_MoveNext(i)">Move Down &#9660;</span>
+          <br />
+          <div style="padding-top:20px;"><span id="Ingredient_Delete" class="Link" (click)="Ingredient_Delete(i);">&lt; Delete &gt;</span></div>
         </div>
         <div style="clear:both;"></div>
-        <hr *ngIf="i < recipe.IngredientList.length - 1"/>
+        <hr *ngIf="i < recipeForm.get('IngredientList')['controls'].length - 1" />
       </div>
-      <a *ngIf="recipe.IngredientList?.length > 0" id="Ingredient_AddNew" style="cursor:pointer;" (click)="Ingredient_AddNew()">&lt; Add New &gt;</a>
+      <span *ngIf="recipeForm.get('IngredientList')['controls'].length > 0" id="Ingredient_AddNew" class="Link" (click)="Ingredient_AddNew()">&lt; Add New &gt;</span>
     </div>
 
     <div class="SectionHeading" style="clear:both;">
       Directions
     </div>
-    <div id="DirectionsForm" style="clear:both;">
+    <div id="DirectionsForm" formArrayName="DirectionList" style="clear:both;">
+      <span id="Direction_AddNew" style="cursor:pointer;" (click)="Direction_AddNew()">&lt; Add New &gt;</span>
+      <div *ngFor="let ingredient of recipeForm.get('DirectionList')['controls']; let i = index" [formGroupName]="i">
+        <div style="clear:both;"></div>
+        <input type="hidden" formControlName="DirectionID" />
+        <ul class="FormFields" style="float:left;">
+          <li>
+            <label>Display Type:</label>
+            <select formControlName="DisplayType">
+              <option value="DIR">Direction</option>
+              <option value="HDR">Header</option>
+            </select>
+          </li>
+          <li>
+            <label>Direction Text:</label>
+            <input formControlName="DirectionText" style="width: 455px; max-width: 100%;" />
+          </li>
+        </ul>
+        <div style="float:right; width:100px; text-align:right;">
+          <span *ngIf="i > 0" id="Direction_MovePrevious" class="Link" (click)="Direction_MovePrevious(i)">Move Up &#9650;</span>
+          <br />
+          <span *ngIf="i < recipeForm.get('DirectionList')['controls'].length - 1" id="Direction_MoveNext" class="Link" (click)="Direction_MoveNext(i)">Move Down &#9660;</span>
+          <br />
+          <div style="padding-top:20px;"><span id="Direction_Delete" class="Link" (click)="Direction_Delete(i);">&lt; Delete &gt;</span></div>
+        </div>
+        <div style="clear:both;"></div>
+        <hr *ngIf="i < recipeForm.get('DirectionList')['controls'].length - 1" />
+      </div>
+      <span *ngIf="recipeForm.get('DirectionList')['controls'].length > 0" id="Direction_AddNew" class="Link" (click)="Direction_AddNew()">&lt; Add New &gt;</span>
+    </div>
 
+    <hr />
+    <div style="text-align:center;">
+      <input id="btnSave" class="BtnSubmit" type="submit" [disabled]="!recipeForm.valid" value="Save" style="width: 60px;" />
+      <input id="btnCancel" class="BtnSubmit" type="button" value="Cancel" (click)="CancelRecipe()" style="margin-left:40px; width:60px;" />
     </div>
-    </div>
+  </div>
 </form>
+
+{{recipe.CategoryList | json}}
 
 <ng-template #imageDisplay>
   <div class="modal-body ImageStandard">

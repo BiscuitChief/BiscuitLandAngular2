@@ -8,6 +8,16 @@ body {
   font-family: sans-serif;
 }
 
+a, .Link {
+  color: #428BCA;
+  text-decoration: none;
+}
+
+a:hover, .Link:hover {
+  text-decoration:underline;
+  cursor:pointer;
+}
+
 p {
   margin: 0 0 10px;
 }
