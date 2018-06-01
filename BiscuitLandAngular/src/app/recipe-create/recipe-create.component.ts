@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormArray, FormBuilder, AbstractControl, FormControl, ValidatorFn } from '@angular/forms';
 
 import { RecipeService } from '../services/recipe.service';
 
@@ -23,6 +23,7 @@ export class RecipeCreateComponent implements OnInit {
   recipe: Recipe = new Recipe();
   categoryList: RecipeCategory[];
   errMsg: string;
+  ingredientDisplay: string[] = [];
   pathThumbnail: string = Path_Thumbnail;
   pathStandard: string = Path_Standard;
   pathTempThumbnail: string = Path_TempThumbnail;
@@ -48,6 +49,12 @@ export class RecipeCreateComponent implements OnInit {
       IngredientList: this._fb.array([this.GetIngredientForm()]),
       DirectionList: this._fb.array([this.GetDirectionForm()])
     });
+
+    this.recipeForm.get('IngredientList').valueChanges.subscribe(val => {
+      this.SetupDisplay();
+    });
+
+    this.SetupDisplay();
 
     this.recipeService.getAllCategories()
       .subscribe(data => this.LoadFormData(data),
@@ -90,14 +97,18 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   private GetIngredientForm() {
-    return this._fb.group({
+    let newgroup: FormGroup = this._fb.group({
       IngredientID: [''],
       IngredientName: ['', [Validators.required]],
-      DisplayQuantity: ['', [Validators.required]],
+      DisplayQuantity: [''],
       UnitOfMeasure: [''],
       DisplayType: ['', [Validators.required]],
       Notes: ['']
-    })
+    });
+
+    newgroup.setValidators(this.ValidateQuantity);
+
+    return newgroup;
   }
 
   private GetDirectionForm() {
@@ -106,6 +117,15 @@ export class RecipeCreateComponent implements OnInit {
       DirectionText: ['', [Validators.required, Validators.minLength(5)]],
       DisplayType: ['', [Validators.required]]
     })
+  }
+
+  SetupDisplay() {
+    this.ingredientDisplay = [];
+    let displayType = "";
+    for (let dt of (<FormArray>this.recipeForm.controls['IngredientList']).controls) {
+      displayType = (<FormControl>dt["controls"]['DisplayType']).value;
+      this.ingredientDisplay.push(displayType);
+    }
   }
 
   //private AddCategoryForm(cat: RecipeCategory) {
@@ -158,6 +178,7 @@ export class RecipeCreateComponent implements OnInit {
 
   Ingredient_AddNew() {
     (<FormArray>this.recipeForm.controls['IngredientList']).push(this.GetIngredientForm());
+    this.SetupDisplay();
   }
 
   Ingredient_MovePrevious(index: number) {
@@ -165,6 +186,7 @@ export class RecipeCreateComponent implements OnInit {
       let tempitem = this.recipeForm.controls['IngredientList']['controls'][index - 1];
       this.recipeForm.controls['IngredientList']['controls'][index - 1] = this.recipeForm.controls['IngredientList']['controls'][index];
       this.recipeForm.controls['IngredientList']['controls'][index] = tempitem;
+      this.SetupDisplay();
     }
   }
 
@@ -173,11 +195,13 @@ export class RecipeCreateComponent implements OnInit {
       let tempitem = this.recipeForm.controls['IngredientList']['controls'][index + 1];
       this.recipeForm.controls['IngredientList']['controls'][index + 1] = this.recipeForm.controls['IngredientList']['controls'][index];
       this.recipeForm.controls['IngredientList']['controls'][index] = tempitem;
+      this.SetupDisplay();
     }
   }
 
   Ingredient_Delete(index: number) {
     this.recipeForm.controls['IngredientList']['controls'].splice(index, 1);
+    this.SetupDisplay();
   }
 
   Direction_AddNew() {
@@ -230,4 +254,11 @@ export class RecipeCreateComponent implements OnInit {
     //ajax call here to remove any temp images
   }
 
+  ValidateQuantity(ing: AbstractControl) {
+    let qty = (<FormControl>ing["controls"]['DisplayQuantity']).value;
+    if (qty == "") {
+      return { validQuantity: true };
+    }
+    return null;
+  }
 }

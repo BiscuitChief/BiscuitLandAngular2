@@ -71,13 +71,14 @@
               <option value="HDR">Header</option>
             </select>
           </li>
-          <li>
+          <li *ngIf="ingredientDisplay[i] === 'ING'">
             <label>Quantity:</label>
             <input formControlName="DisplayQuantity" style="margin-right:30px;" />
             <label>Unit Of Measure:</label>
             <input formControlName="UnitOfMeasure" />
+            <div *ngIf="ingredient.errors && ingredient.errors['invalidQuantity']">test</div>
           </li>
-          <li>
+          <li *ngIf="ingredientDisplay[i] === 'ING'">
             <label>Notes:</label>
             <input formControlName="Notes" style="width: 455px; max-width: 100%;" />
           </li>
@@ -137,7 +138,11 @@
   </div>
 </form>
 
-{{recipe.CategoryList | json}}
+{{ingredientDisplay | json}}
+<br /><br />
+{{this.recipeForm.errors | json}}
+<br /><br />
+{{this.recipeForm.valid | json}}
 
 <ng-template #imageDisplay>
   <div class="modal-body ImageStandard">
