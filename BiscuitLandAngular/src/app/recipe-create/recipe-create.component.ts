@@ -102,7 +102,7 @@ export class RecipeCreateComponent implements OnInit {
       IngredientName: ['', [Validators.required]],
       DisplayQuantity: [''],
       UnitOfMeasure: [''],
-      DisplayType: ['', [Validators.required]],
+      DisplayType: ['ING', [Validators.required]],
       Notes: ['']
     });
 
@@ -115,7 +115,7 @@ export class RecipeCreateComponent implements OnInit {
     return this._fb.group({
       DirectionID: [''],
       DirectionText: ['', [Validators.required, Validators.minLength(5)]],
-      DisplayType: ['', [Validators.required]]
+      DisplayType: ['DIR', [Validators.required]]
     })
   }
 
@@ -127,26 +127,6 @@ export class RecipeCreateComponent implements OnInit {
       this.ingredientDisplay.push(displayType);
     }
   }
-
-  //private AddCategoryForm(cat: RecipeCategory) {
-  //  return this._fb.group({
-  //    CategoryName: ["test label"],
-  //    CategoryCode: ["TEST"],
-  //    IsSelected: [false]
-  //  })
-  //}
-
-  //private SetupCategoryForm(catlist: RecipeCategory[]) {
-  //  for (let cat of this.categoryList) {
-  //    (<FormArray>this.recipeForm.controls['CategoryList']).push(
-  //      this._fb.group({
-  //        CategoryName: [cat.CategoryName],
-  //        CategoryCode: [cat.CategoryCode],
-  //        IsSelected: [cat.IsSelected]
-  //      })
-  //    );
-  //  }
-  //}
 
   SubmitForm() {
   }
@@ -256,8 +236,9 @@ export class RecipeCreateComponent implements OnInit {
 
   ValidateQuantity(ing: AbstractControl) {
     let qty = (<FormControl>ing["controls"]['DisplayQuantity']).value;
-    if (qty == "") {
-      return { validQuantity: true };
+    let displaytype = (<FormControl>ing["controls"]['DisplayType']).value;
+    if (displaytype == 'ING' && qty == "") {
+      return { invalidQuantity: true };
     }
     return null;
   }
