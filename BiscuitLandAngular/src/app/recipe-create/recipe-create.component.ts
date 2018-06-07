@@ -22,6 +22,7 @@ export class RecipeCreateComponent implements OnInit {
 
   recipe: Recipe = new Recipe();
   categoryList: RecipeCategory[];
+  showValidationMessages: Boolean = false;
   errMsg: string;
   ingredientDisplay: string[] = [];
   pathThumbnail: string = Path_Thumbnail;
@@ -129,6 +130,12 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   SubmitForm() {
+    if (!this.recipeForm.valid) {
+      this.showValidationMessages = true;
+    } else {
+      this.showValidationMessages = false;
+      //Save data here
+    }
   }
 
   SaveRecipe(rcp: Recipe) {

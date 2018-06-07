@@ -315,6 +315,10 @@ textarea.ng-dirty.ng-invalid.ng-touched {
   vertical-align:top;
 }
 
+.IngredientsForm .FormFields label {
+  width: 130px;
+}
+
 .InputForm .FormFields .Seperator {
   border-bottom: 1px solid #888888;
   margin-bottom: 10px;

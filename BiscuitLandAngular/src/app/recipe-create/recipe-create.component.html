@@ -15,12 +15,16 @@
       <li>
         <label>Title:</label>
         <input type="text" formControlName="Title" />
+        <div *ngIf="showValidationMessages && recipeForm.get('Title').errors"
+             class="ErrorMsg">Please enter the Title.</div>
       </li>
       <li>
         <label>Description:</label>
         <textarea formControlName="Description"
                   rows="3"
                   style="width:600px; max-width: 100%;"></textarea>
+        <div *ngIf="showValidationMessages && recipeForm.get('Description').errors"
+             class="ErrorMsg">Please enter the Description.</div>
       </li>
       <li>
         <label>Categories:</label>
@@ -56,7 +60,7 @@
     <div class="SectionHeading" style="clear:both;">
       Ingredients
     </div>
-    <div id="IngredientsForm" formArrayName="IngredientList" style="clear:both;">
+    <div class="IngredientsForm" formArrayName="IngredientList" style="clear:both;">
       <span id="Ingredient_AddNew" class="Link" (click)="Ingredient_AddNew()">&lt; Add New &gt;</span>
       <div *ngFor="let ingredient of recipeForm.get('IngredientList')['controls']; let i = index" [formGroupName]="i">
         <div style="clear:both;"></div>
@@ -70,13 +74,16 @@
               <option value="ING">Ingredient</option>
               <option value="HDR">Header</option>
             </select>
+            <div *ngIf="showValidationMessages && ingredient.get('IngredientName').errors && ingredient.get('IngredientName').errors.required"
+                 class="ErrorMsg">Please enter an Ingredient Name.</div>
           </li>
           <li *ngIf="ingredientDisplay[i] === 'ING'">
             <label>Quantity:</label>
-            <input formControlName="DisplayQuantity" style="margin-right:30px;" />
+            <input formControlName="DisplayQuantity" style="margin-right:30px;"
+                   [class.ng-invalid]="ingredient.errors && ingredient.errors['invalidQuantity']"/>
             <label>Unit Of Measure:</label>
             <input formControlName="UnitOfMeasure" />
-            <div *ngIf="ingredient.errors && ingredient.errors['invalidQuantity']">test</div>
+            <div *ngIf="showValidationMessages && ingredient.errors && ingredient.errors['invalidQuantity']" class="ErrorMsg">Please enter a valid Quantity</div>
           </li>
           <li *ngIf="ingredientDisplay[i] === 'ING'">
             <label>Notes:</label>
@@ -99,9 +106,9 @@
     <div class="SectionHeading" style="clear:both;">
       Directions
     </div>
-    <div id="DirectionsForm" formArrayName="DirectionList" style="clear:both;">
-      <span id="Direction_AddNew" style="cursor:pointer;" (click)="Direction_AddNew()">&lt; Add New &gt;</span>
-      <div *ngFor="let ingredient of recipeForm.get('DirectionList')['controls']; let i = index" [formGroupName]="i">
+    <div class="DirectionsForm" formArrayName="DirectionList" style="clear:both;">
+      <span id="Direction_AddNew" class="Link" (click)="Direction_AddNew()">&lt; Add New &gt;</span>
+      <div *ngFor="let direction of recipeForm.get('DirectionList')['controls']; let i = index" [formGroupName]="i">
         <div style="clear:both;"></div>
         <input type="hidden" formControlName="DirectionID" />
         <ul class="FormFields" style="float:left;">
@@ -115,6 +122,8 @@
           <li>
             <label>Direction Text:</label>
             <input formControlName="DirectionText" style="width: 455px; max-width: 100%;" />
+            <div *ngIf="showValidationMessages && direction.get('DirectionText').errors"
+                 class="ErrorMsg">Please enter the Direction Text.</div>
           </li>
         </ul>
         <div style="float:right; width:100px; text-align:right;">
@@ -132,7 +141,7 @@
 
     <hr />
     <div style="text-align:center;">
-      <input id="btnSave" class="BtnSubmit" type="submit" [disabled]="!recipeForm.valid" value="Save" style="width: 60px;" />
+      <input id="btnSave" class="BtnSubmit" type="submit" value="Save" style="width: 60px;" />
       <input id="btnCancel" class="BtnSubmit" type="button" value="Cancel" (click)="CancelRecipe()" style="margin-left:40px; width:60px;" />
     </div>
   </div>
