@@ -5,6 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BiscuitChief.Models;
+using System.IO;
+using System.Drawing;
+using System.Web;
 
 namespace BiscuitChief.Controllers
 {
@@ -88,6 +91,94 @@ namespace BiscuitChief.Controllers
                 PortalUtility.SendErrorEmail(ex);
                 return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
             }
+        }
+
+        [Route("api/recipes/uploadimage")]
+        [Authorize(Roles = "FULLACCESS")]
+        [HttpPost]
+        public IHttpActionResult UploadImage()
+        {
+            if (User.IsInRole("ADMIN"))
+            {
+                try
+                {
+                    PortalUtility.CleanupTempFiles();
+                    string imagelist = String.Empty;
+                    foreach (string file in HttpContext.Current.Request.Files)
+                    {
+                        HttpPostedFile fileContent = HttpContext.Current.Request.Files[file];
+                        if (fileContent != null && fileContent.ContentLength > 0)
+                        {
+
+                            // get a stream
+                            string imagename = GetImageName();
+                            string path_thumb = Path.Combine(HttpContext.Current.Server.MapPath(Models.RecipeImage.Path_TempThumbnail), imagename);
+                            string path_full = Path.Combine(HttpContext.Current.Server.MapPath(Models.RecipeImage.Path_TempStandard), imagename);
+
+                            Stream stream = fileContent.InputStream;
+                            Image img = Image.FromStream(stream);
+
+                            Image thumbimg = PortalUtility.ScaleImage(img, 100, 100);
+                            thumbimg.Save(path_thumb, System.Drawing.Imaging.ImageFormat.Png);
+
+                            Image regimg = PortalUtility.ScaleImage(img, 800, 600);
+                            regimg.Save(path_full, System.Drawing.Imaging.ImageFormat.Png);
+
+                            imagelist += imagename + ",";
+
+                        }
+                    }
+                    imagelist = imagelist.Trim(',');
+                    string[] returnval = imagelist.Split(',');
+                    return Ok(returnval);
+                }
+                catch (Exception ex)
+                {
+                    PortalUtility.SendErrorEmail(ex);
+                    return new PortalUtility.PlainTextResult("Upload failed: " + ex.Message, HttpStatusCode.InternalServerError);
+                }
+            }
+            else
+            {
+                return new PortalUtility.PlainTextResult("Demo login does not allow image uploads.", HttpStatusCode.Unauthorized);
+            }
+        }
+
+        [Route("api/recipes/deletetempimage")]
+        [Authorize(Roles = "FULLACCESS")]
+        [HttpDelete]
+        public IHttpActionResult DeleteTempImage(string imagename)
+        {
+            try
+            {
+                if (User.IsInRole("ADMIN"))
+                {
+                    PortalUtility.CleanupTempFiles();
+                    string path_thumb = Path.Combine(HttpContext.Current.Server.MapPath(Models.RecipeImage.Path_TempThumbnail), imagename);
+                    string path_full = Path.Combine(HttpContext.Current.Server.MapPath(Models.RecipeImage.Path_TempStandard), imagename);
+                    if (File.Exists(path_thumb)) { File.Delete(path_thumb); }
+                    if (File.Exists(path_full)) { File.Delete(path_full); }
+                }
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult("Upload failed: " + ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        private string GetImageName()
+        {
+            string filename = String.Empty;
+            Random randnum = new Random();
+
+            for (int i = 0; i <= 5; i++)
+            { filename += (char)(randnum.Next(65, 90)); }
+            filename += String.Format("{0:yyyyMMddhhmmssmmmm}", DateTime.Now);
+            filename += ".png";
+
+            return filename;
         }
     }
 }

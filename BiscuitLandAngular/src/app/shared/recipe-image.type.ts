@@ -12,7 +12,21 @@ export class RecipeImage {
   ThumbnailPath: string;
   StandardPath: string;
 
-  constructor() { }
+  constructor(imageName?: string, isTemp?: boolean) {
+    if (imageName) {
+      this.ImageName = imageName;
+    }
+
+    if (isTemp) {
+      this.IsTemp = isTemp;
+    } else {
+      this.IsTemp = false;
+    }
+
+    if (this.ImageName) {
+      RecipeImage.setImagePaths(this);
+    }
+  }
 
   static setImagePaths(img: RecipeImage) {
     if (img.IsTemp) {

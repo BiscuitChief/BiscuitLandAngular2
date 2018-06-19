@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Validators, FormGroup, FormArray, FormBuilder, AbstractControl, FormControl, ValidatorFn } from '@angular/forms';
 
 import { RecipeService } from '../services/recipe.service';
+import { FileUploaderService } from '../services/file-uploader.service';
 
 import { Recipe } from '../shared/recipe.type';
 import { RecipeImage, Path_Thumbnail, Path_Standard, Path_TempStandard, Path_TempThumbnail } from '../shared/recipe-image.type';
@@ -31,12 +32,14 @@ export class RecipeCreateComponent implements OnInit {
   pathTempStandard: string = Path_TempStandard;
   currentImageIndex: number = -1;
   pageHeading: string = "";
+  uploadResult: string = "";
 
   constructor(private recipeService: RecipeService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private modalService: NgbModal,
-    private _fb: FormBuilder) { }
+    private _fb: FormBuilder,
+    private uploader: FileUploaderService) { }
 
   ngOnInit() {
     this.setupForm();
@@ -156,13 +159,6 @@ export class RecipeCreateComponent implements OnInit {
     this.recipe.CategoryList = catlist;
   }
 
-  ChangeImage(index) {
-    if (index > this.recipe.ImageList.length - 1) {
-      index = 0;
-    }
-    this.currentImageIndex = index;
-  }
-
   Ingredient_AddNew() {
     (<FormArray>this.recipeForm.controls['IngredientList']).push(this.GetIngredientForm());
     this.SetupDisplay();
@@ -215,6 +211,13 @@ export class RecipeCreateComponent implements OnInit {
     this.recipeForm.controls['DirectionList']['controls'].splice(index, 1);
   }
 
+  ChangeImage(index) {
+    if (index > this.recipe.ImageList.length - 1) {
+      index = 0;
+    }
+    this.currentImageIndex = index;
+  }
+
   ShowImage(index: number, content) {
     this.ChangeImage(index);
     this.modalService.open(content, { size: 'lg', centered: true, });
@@ -237,8 +240,23 @@ export class RecipeCreateComponent implements OnInit {
  }
 
   Image_Delete(index: number) {
+    if (this.recipe.ImageList[index].IsTemp) {
+      this.uploader.deleteTempImage(this.recipe.ImageList[index].ImageName)
+        .subscribe(data => null,
+        errMsg => this.uploadResult = <any>errMsg);
+    }
+
     this.recipe.ImageList.splice(index, 1);
-    //ajax call here to remove any temp images
+  }
+
+  UploadImages(files: FileList) {
+    for (var i = 0; i < files.length; i++) {
+      this.uploader.uploadImage(files.item(i)).subscribe(data => {
+        this.recipe.ImageList.push(new RecipeImage(data, true));
+        this.uploadResult = "";
+      },
+        errMsg => this.errMsg = <any>errMsg);
+    }
   }
 
   ValidateQuantity(ing: AbstractControl) {

@@ -8,10 +8,10 @@ export class Recipe {
   Title: string;
   Description: string;
   Quantity: number;
-  IngredientList: RecipeIngredient[];
-  DirectionList: RecipeDirection[];
-  CategoryList: RecipeCategory[];
-  ImageList: RecipeImage[];
+  IngredientList: RecipeIngredient[] = [];
+  DirectionList: RecipeDirection[] = [];
+  CategoryList: RecipeCategory[] = [];
+  ImageList: RecipeImage[] = [];
 
   constructor() { }
 }

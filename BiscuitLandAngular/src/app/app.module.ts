@@ -13,6 +13,7 @@ import { LoginService } from './services/login.service';
 import { ContactService } from './services/contact.service';
 import { DatabaseScriptsService } from './services/database-scripts.service';
 import { RecipeService } from './services/recipe.service';
+import { FileUploaderService } from './services/file-uploader.service';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
@@ -57,7 +58,8 @@ import { RecipeComponent } from './recipe/recipe.component';
     LoginService,
     ContactService,
     DatabaseScriptsService,
-    RecipeService
+    RecipeService,
+    FileUploaderService
   ],
   bootstrap: [AppComponent]
 })

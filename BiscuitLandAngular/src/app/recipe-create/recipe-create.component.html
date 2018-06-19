@@ -34,8 +34,8 @@
       </li>
       <li>
         <label>Images:</label>
-        <input type="file" id="NewImage" accept=".jpg,.jpeg,.png" />
-        <span id="UploadResult"></span>
+        <input type="file" id="NewImage" (change)="UploadImages($event.target.files)" accept=".jpg,.jpeg,.png" />
+        <span id="UploadResult">{{ uploadResult }}</span>
         <div *ngIf="recipe.ImageList?.length > 0">
           <div style="clear:both;"></div>
           <div *ngFor="let image of recipe.ImageList; let i = index" class="ImageEditor">

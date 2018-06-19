@@ -17,10 +17,6 @@ export class ServiceHelper {
     })
   };
 
-  static headers: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'my-auth-token'});
-
   static API_URL = environment.apiUrl;
 
   constructor() {
