@@ -93,6 +93,56 @@ namespace BiscuitChief.Controllers
             }
         }
 
+        [Route("api/recipes/save")]
+        [Authorize(Roles = "FULLACCESS")]
+        [HttpPost]
+        public IHttpActionResult SaveRecipe(Models.Recipe rcp)
+        {
+            try
+            {
+                if (User.IsInRole("ADMIN"))
+                {
+                    int index = 0;
+                    foreach (Models.RecipeIngredient ing in rcp.IngredientList)
+                    { ing.SortOrder = index++; }
+                    index = 0;
+                    foreach (Models.RecipeDirection dir in rcp.DirectionList)
+                    { dir.SortOrder = index++; }
+                    index = 0;
+                    foreach (Models.RecipeImage img in rcp.ImageList)
+                    { img.SortOrder = index++; }
+
+                    rcp.SaveRecipe();
+                }
+
+                return Ok(rcp.RecipeID);
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
+
+        [Route("api/recipes/delete/{recipeId}")]
+        [Authorize(Roles = "FULLACCESS")]
+        [HttpDelete]
+        public IHttpActionResult DeleteRecipe(string recipeId)
+        {
+            try
+            {
+                if (User.IsInRole("ADMIN"))
+                { Models.Recipe.DeleteRecipe(recipeId); }
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                PortalUtility.SendErrorEmail(ex);
+                return new PortalUtility.PlainTextResult(ex.Message, HttpStatusCode.InternalServerError);
+            }
+        }
+
         [Route("api/recipes/uploadimage")]
         [Authorize(Roles = "FULLACCESS")]
         [HttpPost]

@@ -83,7 +83,7 @@ namespace BiscuitChief.Models
             cmd.Parameters.AddWithValue("@pQuantity", this.Quantity);
             cmd.Parameters.AddWithValue("@pUnitOfMeasure", this.UnitOfMeasure);
             cmd.Parameters.AddWithValue("@pNotes", this.Notes);
-            cmd.Parameters.AddWithValue("@pDisplayType", Enum.GetName(this.DisplayType.GetType(), this.DisplayType));
+            cmd.Parameters.AddWithValue("@pDisplayType", this.DisplayType);
             cmd.Parameters.AddWithValue("@pSortOrder", this.SortOrder);
             cmd.Parameters.Add("@pIngredientIDOut", MySqlDbType.Int32);
             cmd.Parameters["@pIngredientIDOut"].Direction = ParameterDirection.Output;

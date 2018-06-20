@@ -46,6 +46,20 @@ export class RecipeService {
       .catch(ServiceHelper.handleError);
   }
 
+  saveRecipe(recipe: Recipe): Observable<string> {
+    return this.http
+      .post(ServiceHelper.API_URL + 'api/recipes/save', recipe, ServiceHelper.httpOptions)
+      .map(rsp => rsp as string)
+      .catch(ServiceHelper.handleError);
+  }
+
+  deleteRecipe(recipeId: string): Observable<string> {
+    return this.http
+      .delete(ServiceHelper.API_URL + 'api/recipes/delete/' + recipeId, ServiceHelper.httpOptions)
+      .map(rsp => rsp as string)
+      .catch(ServiceHelper.handleError);
+  }
+
   private LoadRecipe(rsp: Recipe): Recipe {
     for (let img of rsp.ImageList) {
       RecipeImage.setImagePaths(img);

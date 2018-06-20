@@ -33,13 +33,14 @@ export class RecipeCreateComponent implements OnInit {
   currentImageIndex: number = -1;
   pageHeading: string = "";
   uploadResult: string = "";
+  disableButton: boolean = false;
 
   constructor(private recipeService: RecipeService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private modalService: NgbModal,
     private _fb: FormBuilder,
-    private uploader: FileUploaderService) { }
+    private imageUploader: FileUploaderService) { }
 
   ngOnInit() {
     this.setupForm();
@@ -136,20 +137,48 @@ export class RecipeCreateComponent implements OnInit {
     if (!this.recipeForm.valid) {
       this.showValidationMessages = true;
     } else {
+      this.disableButton = true;
       this.showValidationMessages = false;
-      //Save data here
+
+      //Get form values
+      let formRcp: Recipe = this.recipeForm.value;
+
+      //combine form values with recipe variable since not all recipe fields are form fields
+      this.recipe.Title = formRcp.Title;
+      this.recipe.Description = formRcp.Description;
+      this.recipe.IngredientList = formRcp.IngredientList;
+      this.recipe.DirectionList = formRcp.DirectionList;
+
+      //save the recipe data then redirect to recipe detail
+      this.recipeService.saveRecipe(this.recipe)
+        .subscribe(data => this.router.navigateByUrl("/recipes/recipe/" + data),
+        errMsg => this.errMsg = <any>errMsg,
+        () => this.disableButton = false);
     }
   }
 
-  SaveRecipe(rcp: Recipe) {
-  }
-
   CancelRecipe() {
+    //cleanup any temp images
+    for (let img of this.recipe.ImageList) {
+      if (img.IsTemp) {
+        this.imageUploader.deleteTempImage(img.ImageName)
+          .subscribe(data => null,
+          errMsg => this.uploadResult = <any>errMsg);
+      }
+    }
+
+    //redirect to either the recipe details or the search page
     if (this.recipe.RecipeID) {
       this.router.navigateByUrl("/recipes/recipe/" + this.recipe.RecipeID);
     } else {
       this.router.navigateByUrl("/recipes/search");
     }
+  }
+
+  DeleteRecipe() {
+    this.recipeService.deleteRecipe(this.recipe.RecipeID)
+      .subscribe(data => this.router.navigateByUrl("/recipes/search"),
+      errMsg => this.errMsg = <any>errMsg);
   }
 
   private SetupCategories(catlist: RecipeCategory[]) {
@@ -183,7 +212,7 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   Ingredient_Delete(index: number) {
-    this.recipeForm.controls['IngredientList']['controls'].splice(index, 1);
+    (<FormArray>this.recipeForm.controls['IngredientList']).removeAt(index);
     this.SetupDisplay();
   }
 
@@ -208,7 +237,7 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   Direction_Delete(index: number) {
-    this.recipeForm.controls['DirectionList']['controls'].splice(index, 1);
+    (<FormArray>this.recipeForm.controls['DirectionList']).removeAt(index);
   }
 
   ChangeImage(index) {
@@ -241,7 +270,7 @@ export class RecipeCreateComponent implements OnInit {
 
   Image_Delete(index: number) {
     if (this.recipe.ImageList[index].IsTemp) {
-      this.uploader.deleteTempImage(this.recipe.ImageList[index].ImageName)
+      this.imageUploader.deleteTempImage(this.recipe.ImageList[index].ImageName)
         .subscribe(data => null,
         errMsg => this.uploadResult = <any>errMsg);
     }
@@ -250,8 +279,9 @@ export class RecipeCreateComponent implements OnInit {
   }
 
   UploadImages(files: FileList) {
+    //have to do a regular for loop because the FileList object doesn't support foreach
     for (var i = 0; i < files.length; i++) {
-      this.uploader.uploadImage(files.item(i)).subscribe(data => {
+      this.imageUploader.uploadImage(files.item(i)).subscribe(data => {
         this.recipe.ImageList.push(new RecipeImage(data, true));
         this.uploadResult = "";
       },

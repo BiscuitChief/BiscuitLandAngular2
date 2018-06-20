@@ -50,7 +50,7 @@ namespace BiscuitChief.Models
             cmd.Parameters.AddWithValue("@pRecipeID", this.RecipeID);
             cmd.Parameters.AddWithValue("@pSortOrder", this.SortOrder);
             cmd.Parameters.AddWithValue("@pDirectionText", this.DirectionText);
-            cmd.Parameters.AddWithValue("@pDisplayType", Enum.GetName(this.DisplayType.GetType(), this.DisplayType));
+            cmd.Parameters.AddWithValue("@pDisplayType", this.DisplayType);
             cmd.Parameters.Add("@pDirectionIDOut", MySqlDbType.Int32);
             cmd.Parameters["@pDirectionIDOut"].Direction = ParameterDirection.Output;
             cmd.ExecuteNonQuery();

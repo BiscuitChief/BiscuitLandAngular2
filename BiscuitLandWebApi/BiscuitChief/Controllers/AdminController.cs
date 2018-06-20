@@ -63,12 +63,12 @@ namespace BiscuitChief.Controllers
 
                     foreach (Models.RecipeIngredient ing in rcp.IngredientList)
                     {
-                        backupscript.AppendLine(String.Format(ingredientsaveproc, ing.IngredientName.Trim().Replace("'", "''"), ing.Quantity, ing.UnitOfMeasure.Replace("'", "''"), ing.Notes.Trim().Replace("'", "''"), Enum.GetName(ing.DisplayType.GetType(), ing.DisplayType), ing.SortOrder));
+                        backupscript.AppendLine(String.Format(ingredientsaveproc, ing.IngredientName.Trim().Replace("'", "''"), ing.Quantity, ing.UnitOfMeasure.Replace("'", "''"), ing.Notes.Trim().Replace("'", "''"), ing.DisplayType, ing.SortOrder));
                     }
 
                     foreach (Models.RecipeDirection dir in rcp.DirectionList)
                     {
-                        backupscript.AppendLine(String.Format(directionsaveproc, dir.SortOrder, dir.DirectionText.Trim().Replace("'", "''"), Enum.GetName(dir.DisplayType.GetType(), dir.DisplayType)));
+                        backupscript.AppendLine(String.Format(directionsaveproc, dir.SortOrder, dir.DirectionText.Trim().Replace("'", "''"), dir.DisplayType));
                     }
 
                     foreach (Models.Recipe.Category ctg in rcp.CategoryList)

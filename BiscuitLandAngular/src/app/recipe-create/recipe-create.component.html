@@ -3,7 +3,7 @@
     <div class="Title">
       {{pageHeading}}
       <div *ngIf="recipe.RecipeID" style="float:right; font-weight:normal; font-size:12px;">
-        <a href='#'>&lt; Delete Recipe &gt;</a>
+        <span class="Link" (click)="DeleteRecipe()">&lt; Delete Recipe &gt;</span>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
           <li *ngIf="ingredientDisplay[i] === 'ING'">
             <label>Quantity:</label>
             <input formControlName="DisplayQuantity" style="margin-right:30px;"
-                   [class.ng-invalid]="ingredient.errors && ingredient.errors['invalidQuantity']"/>
+                   [class.ng-invalid]="ingredient.errors && ingredient.errors['invalidQuantity']" />
             <label>Unit Of Measure:</label>
             <input formControlName="UnitOfMeasure" />
             <div *ngIf="showValidationMessages && ingredient.errors && ingredient.errors['invalidQuantity']" class="ErrorMsg">Please enter a valid Quantity</div>
@@ -141,17 +141,11 @@
 
     <hr />
     <div style="text-align:center;">
-      <input id="btnSave" class="BtnSubmit" type="submit" value="Save" style="width: 60px;" />
+      <input id="btnSave" class="BtnSubmit" type="submit" value="Save" [disabled]="disableButton" style="width: 60px;" />
       <input id="btnCancel" class="BtnSubmit" type="button" value="Cancel" (click)="CancelRecipe()" style="margin-left:40px; width:60px;" />
     </div>
   </div>
 </form>
-
-{{ingredientDisplay | json}}
-<br /><br />
-{{this.recipeForm.errors | json}}
-<br /><br />
-{{this.recipeForm.valid | json}}
 
 <ng-template #imageDisplay>
   <div class="modal-body ImageStandard">
