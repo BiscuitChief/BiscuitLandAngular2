@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/finally';
 
 import { LoginService } from '../services/login.service';
 import { NavitemService } from '../services/navitem.service';
@@ -84,9 +85,9 @@ export class LoginComponent implements OnInit {
       this.loginInfo = this.loginForm.value;
 
       this.loginService.login(this.loginInfo)
+        .finally(() => this.disableButton = false)
         .subscribe(msg => this.processLogin(msg),
-        errMsg => this.errMsg = <any>errMsg,
-        () => this.disableButton = false);
+        errMsg => this.errMsg = <any>errMsg);
 
       this.loginForm.reset();
     }
@@ -94,8 +95,11 @@ export class LoginComponent implements OnInit {
 
   processLogin(results: string) {
     if (results == null) {
+      this.navitemService.topNavigation
+        .subscribe(navlist => this.router.navigateByUrl(this.return),
+        errMsg => this.errMsg = <any>errMsg);
+
       this.navitemService.refreshTopNavigation();
-      this.router.navigateByUrl(this.return);
     }
   }
 }

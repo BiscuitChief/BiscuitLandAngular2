@@ -24,7 +24,10 @@ export class LogoutComponent implements OnInit {
   }
 
   Logout() {
+    this.navitemService.topNavigation
+      .subscribe(navlist => this.router.navigateByUrl("/"),
+      errMsg => this.errMsg = <any>errMsg);
+
     this.navitemService.refreshTopNavigation();
-    this.router.navigateByUrl("/");
   }
 }

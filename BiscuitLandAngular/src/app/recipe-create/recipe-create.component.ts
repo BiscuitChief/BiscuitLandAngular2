@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute, Router } from '@angular/router';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Validators, FormGroup, FormArray, FormBuilder, AbstractControl, FormControl, ValidatorFn } from '@angular/forms';
+import 'rxjs/add/operator/finally';
 
 import { RecipeService } from '../services/recipe.service';
 import { FileUploaderService } from '../services/file-uploader.service';
@@ -151,9 +152,9 @@ export class RecipeCreateComponent implements OnInit {
 
       //save the recipe data then redirect to recipe detail
       this.recipeService.saveRecipe(this.recipe)
-        .subscribe(data => this.router.navigateByUrl("/recipes/recipe/" + data),
-        errMsg => this.errMsg = <any>errMsg,
-        () => this.disableButton = false);
+        .finally(() => this.disableButton = false)
+       .subscribe(data => this.router.navigateByUrl("/recipes/recipe/" + data),
+        errMsg => this.errMsg = <any>errMsg);
     }
   }
 
