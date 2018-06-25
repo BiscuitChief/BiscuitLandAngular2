@@ -200,6 +200,8 @@
     <Content Include="DownloadFiles\BiscuitChiefDatabaseScripts.zip" />
     <None Include="Properties\PublishProfiles\BiscuitChief.net web deploy.pubxml" />
     <None Include="Properties\PublishProfiles\File System.pubxml" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
